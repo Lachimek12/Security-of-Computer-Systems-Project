@@ -30,9 +30,9 @@ namespace AuxiliaryApp
 
         private void Main_Clicked(object sender, RoutedEventArgs e)
         {
-            this.Width = 1210;
-            this.Height = 830;
-            this.ResizeMode = ResizeMode.CanResize;
+            this.Width = 400;
+            this.Height = 360;
+            this.ResizeMode = ResizeMode.NoResize;
             MainNavbarButton.Visibility = Visibility.Collapsed;
             DataContext = new MainViewModel();
         }

@@ -5,12 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AuxiliaryApp.ViewModels" d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="770" d:DesignWidth="1200
+             d:DesignHeight="300" d:DesignWidth="400
              ">
     <UserControl.Resources>
     </UserControl.Resources>
     <Grid Background="White">
-        
+        <Button Content="Generate Keys" Command="{Binding GenerateKeysCommand}" HorizontalAlignment="Left" Margin="261,0,0,0" VerticalAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Margin="80,0,0,0" TextWrapping="Wrap" Text="{Binding TextBox_PIN, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Width="120"/>
+        <Label Content="Enter 6 digit PIN" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="80,115,0,0" VerticalAlignment="Top" Width="120"/>
 
+        <Label Content="Status: " HorizontalAlignment="Left" Margin="80,179,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Label_Status}" HorizontalAlignment="Left" Margin="133,179,0,0" VerticalAlignment="Top" Width="257" Height="26"/>
     </Grid>
 </UserControl>
