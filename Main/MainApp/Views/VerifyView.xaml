@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="MainApp.Views.VerifyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MainApp.ViewModels" d:DataContext="{d:DesignInstance Type=local:VerifyViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="400
+             ">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Button Content="Choose PDF file" Command="{Binding ChoosePdfFileCommand}" HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top" Width="134"/>
+        <Label Content="{Binding Label_PdfFileName}" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Width="134" Height="45"/>
+        <Button Content="Sign PDF" Command="{Binding VerifyPdfFileCommand}" IsEnabled="{Binding Button_IsVeryfingEnabled}" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Width="134"/>
+
+
+        <Label Content="Status: " HorizontalAlignment="Left" Margin="44,187,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.063,0.732"/>
+        <Label Content="{Binding Label_Status}" HorizontalAlignment="Left" Margin="104,187,0,0" VerticalAlignment="Top" Width="257" Height="26"/>
+    </Grid>
+</UserControl>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,12 +28,20 @@ namespace AuxiliaryApp.Models
             string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
 
             string keysDirectory = projectDirectory + "/Assets";
-            _publicKeyFilePath = keysDirectory + "/public.dat";
+            _publicKeyFilePath = keysDirectory + "/public.cer";
             _privateKeyFilePath = keysDirectory + "/private.dat";
         }
         public void GenerateKeys(string input)
         {
             RSA rsa = RSA.Create(_RSAkeysLength);
+
+            var req = new CertificateRequest("CN=Signer", rsa, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+            req.CertificateExtensions.Add(new X509KeyUsageExtension(X509KeyUsageFlags.DigitalSignature, true));
+            var cert = req.CreateSelfSigned(DateTimeOffset.Now, DateTimeOffset.Now.AddYears(10));
+
+            // Save public cert
+            File.WriteAllBytes(_publicKeyFilePath, cert.Export(X509ContentType.Cert));
+
             var parameters = rsa.ExportParameters(true);
 
 
@@ -45,10 +54,11 @@ namespace AuxiliaryApp.Models
             aes.Mode = CipherMode.CFB;
 
 
+            byte[] privateKey = rsa.ExportRSAPrivateKey();
 
             ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
 
-            byte[] encryptedPrivateKey = encryptor.TransformFinalBlock(parameters.D, 0, parameters.D.Length);
+            byte[] encryptedPrivateKey = encryptor.TransformFinalBlock(privateKey, 0, privateKey.Length);
 
             SaveKeysToFile(encryptedPrivateKey, parameters.Modulus);
         }
@@ -57,7 +67,7 @@ namespace AuxiliaryApp.Models
         private void SaveKeysToFile(byte[] privateKey, byte[] publicKey)
         {
             File.WriteAllBytes(_privateKeyFilePath, privateKey);
-            File.WriteAllBytes(_publicKeyFilePath, publicKey);
+            //File.WriteAllBytes(_publicKeyFilePath, publicKey);
         }
 
         private byte[] HashInput(string input)
@@ -69,5 +79,6 @@ namespace AuxiliaryApp.Models
                 return hashBytes;
             }
         }
+
     }
 }

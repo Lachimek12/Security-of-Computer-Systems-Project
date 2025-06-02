@@ -25,16 +25,27 @@ namespace MainApp
         public MainWindow()
         {
             InitializeComponent();
-            this.Main_Clicked(null, null);
+            this.Sign_Clicked(null, null);
         }
 
-        private void Main_Clicked(object sender, RoutedEventArgs e)
+        private void Sign_Clicked(object sender, RoutedEventArgs e)
         {
-            this.Width = 1210;
-            this.Height = 830;
+            this.Width = 400;
+            this.Height = 360;
             this.ResizeMode = ResizeMode.CanResize;
-            MainNavbarButton.Visibility = Visibility.Collapsed;
-            DataContext = new MainViewModel();
+            SignNavbarButton.Visibility = Visibility.Collapsed;
+            VerifyNavbarButton.Visibility = Visibility.Visible;
+            
+            DataContext = new SignViewModel();
+        }
+        private void Verify_Clicked(object sender, RoutedEventArgs e)
+        {
+            this.Width = 400;
+            this.Height = 360;
+            this.ResizeMode = ResizeMode.CanResize;
+            VerifyNavbarButton.Visibility = Visibility.Collapsed;
+            SignNavbarButton.Visibility = Visibility.Visible;
+            DataContext = new VerifyViewModel();
         }
     }
 }

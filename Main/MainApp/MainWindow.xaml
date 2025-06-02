@@ -7,10 +7,13 @@
         xmlns:views="clr-namespace:MainApp.Views"
         mc:Ignorable="d"
         ResizeMode="CanResize"
-        Title="Main Application" Height="800" Width="1200">
+        Title="Main Application" Height="360" Width="400">
     <Window.Resources>
-        <DataTemplate x:Name="mainViewTemplate" DataType="{x:Type viewmodels:MainViewModel}">
-            <views:MainView DataContext="{Binding}"/>
+        <DataTemplate x:Name="signViewTemplate" DataType="{x:Type viewmodels:SignViewModel}">
+            <views:SignView DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="verifyViewTemplate" DataType="{x:Type viewmodels:VerifyViewModel}">
+            <views:VerifyView DataContext="{Binding}"/>
         </DataTemplate>
     </Window.Resources>
     <Grid>
@@ -24,7 +27,8 @@
         <!-- Top navigation bar -->
         <DockPanel Background="Gray" Grid.Row="0" Grid.Column="0">
             <StackPanel Orientation="Horizontal">
-                <Button Name="MainNavbarButton" Content="Main View" Width="100" Click="Main_Clicked"/>
+                <Button Name="SignNavbarButton" Content="Sign View" Width="100" Click="Sign_Clicked"/>
+                <Button Name="VerifyNavbarButton" Content="Verify View" Width="100" Click="Verify_Clicked"/>
             </StackPanel>
         </DockPanel>
 

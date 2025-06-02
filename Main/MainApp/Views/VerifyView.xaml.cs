@@ -19,15 +19,15 @@ namespace MainApp.Views
     /// <summary>
     /// Interaction logic for RedView.xaml
     /// </summary>
-    public partial class MainView : UserControl
+    public partial class VerifyView : UserControl
     {
 
         #region Constructors
-        public MainView()
+        public VerifyView()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
-            _viewModel = (MainViewModel)DataContext;
+            DataContext = new VerifyViewModel();
+            _viewModel = (VerifyViewModel)DataContext;
         }
 
         #endregion
@@ -35,7 +35,7 @@ namespace MainApp.Views
 
         #region Members
 
-        private MainViewModel _viewModel;
+        private VerifyViewModel _viewModel;
 
         #endregion
 
