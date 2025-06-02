@@ -69,7 +69,15 @@ namespace MainApp.Models
 
             ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
 
-            byte[] decyptedData = decryptor.TransformFinalBlock(data, 0, data.Length);
+            byte[] decyptedData = null;
+            try
+            {
+                decyptedData = decryptor.TransformFinalBlock(data, 0, data.Length);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("Not valid password", ex);
+            }
             var rsa = RSA.Create();
             rsa.ImportRSAPrivateKey(decyptedData, out _);
             var bcCert = DotNetUtilities.FromX509Certificate(cert);
@@ -151,7 +159,7 @@ namespace MainApp.Models
                 IList<VerificationException> fails = CertificateVerification.VerifyCertificates(pkc, new Org.BouncyCastle.X509.X509Certificate[] { certificate }, null, cal);
                 if (fails.Count > 0)
                 {
-                    throw new InvalidOperationException("The file is not signed using the specified key - pair.");
+                    throw new InvalidOperationException("The file is not signed using the specified key.");
                 }
             }
         }

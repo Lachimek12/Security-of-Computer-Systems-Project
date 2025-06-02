@@ -36,11 +36,12 @@ namespace MainApp.ViewModels
         enum Status
         {
             WaitingForPin,      
-            PdfValid,                
-            PinValid,               
+            PdfValid,
+            WaitingForPdf,               
             PdfAndPinValid,
             PdfSigning,
             PdfSigned,
+            PrivateKeyNotFound,
             SignUnsuccesful
         }
 
@@ -54,10 +55,11 @@ namespace MainApp.ViewModels
             {
                 {Status.WaitingForPin, "Waiting for PIN" },
                 {Status.PdfValid, "Waiting for valid PIN" },
-                {Status.PinValid, "Waiting for pdf file"},
+                {Status.WaitingForPdf, "Waiting for pdf file"},
                 {Status.PdfAndPinValid, "Ready to sign PDF" },
                 {Status.PdfSigning, "Pdf is being signed" },
                 {Status.PdfSigned, "Pdf file signed succesfully in the same directory" },
+                {Status.PrivateKeyNotFound, "Couldn't find private key" },
                 {Status.SignUnsuccesful, "Couldn't sign pdf" }
             };
 
@@ -70,7 +72,7 @@ namespace MainApp.ViewModels
             {
                 this._privateKeyFilePath = ExtractPrivateKey();
             }
-            catch (Exception ex) { };
+            catch (Exception) { };
             StartDriveWatcher();
 
         }
@@ -111,19 +113,7 @@ namespace MainApp.ViewModels
 
                 bool isValidPIN = IsValidPIN();
 
-                if (isValidPIN && this.Label_PdfFileName != null)
-                {
-                    Button_IsSigningEnabled = "true";
-                    SetStatusLabel(Status.PdfAndPinValid);
-                }
-                else if (isValidPIN)
-                {
-                    SetStatusLabel(Status.PinValid);
-                }
-                else
-                {
-                    SetStatusLabel(Status.WaitingForPin);
-                }
+                ReadyToSign();
             }
         }
 
@@ -210,7 +200,7 @@ namespace MainApp.ViewModels
             }
             catch (Exception ex)
             {
-                SetStatusLabel(Status.SignUnsuccesful);
+                SetCutomStatusLabel(ex.Message);
             }
         }
 
@@ -225,19 +215,8 @@ namespace MainApp.ViewModels
             {
                 this._pdfFilePath = openFileDialog.FileName;
                 this.Label_PdfFileName = Regex.Match(this._pdfFilePath, @"[^\\\/]+$").Value;
-                if (this.Label_PdfFileName != null && IsValidPIN())
-                {
-                    SetStatusLabel(Status.PdfAndPinValid);
-                    Button_IsSigningEnabled = "true";
-                }
-                else if(this.Label_PdfFileName != null)
-                {
-                    SetStatusLabel(Status.PdfValid);
-                }
-                else
-                {
-                    Button_IsSigningEnabled = "false";
-                }
+
+                ReadyToSign();
             }
         }
 
@@ -281,6 +260,29 @@ namespace MainApp.ViewModels
 
         }
 
+        private void ReadyToSign()
+        {
+            Button_IsSigningEnabled = "false";
+
+            if (!IsValidPIN())
+            {
+                SetStatusLabel(Status.WaitingForPin);
+            }
+            else if (this.Label_PdfFileName == null)
+            {
+                SetStatusLabel(Status.WaitingForPdf);
+            }
+            else if (this._privateKeyFilePath == null)
+            {
+                SetStatusLabel(Status.PrivateKeyNotFound);
+            }
+            else
+            {
+                SetStatusLabel(Status.PdfAndPinValid);
+                Button_IsSigningEnabled = "true";
+            }
+        }
+
         private void StartDriveWatcher()
         {
             var watcher = new ManagementEventWatcher(
@@ -294,12 +296,12 @@ namespace MainApp.ViewModels
             try
             {
                 this._privateKeyFilePath = ExtractPrivateKey();
-                SetCutomStatusLabel("Private key found on USB drive");
             }
             catch (Exception ex)
             {
-                SetCutomStatusLabel(ex.Message);
+                this._privateKeyFilePath = null;
             }
+            ReadyToSign();
         }
 
         #endregion

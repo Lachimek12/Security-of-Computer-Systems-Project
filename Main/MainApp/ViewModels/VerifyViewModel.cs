@@ -155,6 +155,7 @@ namespace MainApp.ViewModels
                 string certificatePath = ExtractCertificate();
 
                 _signModel.VerifyKeys(certificatePath, this._pdfFilePath);
+                SetStatusLabel(Status.PdfVerified);
             }
             catch (Exception ex)
             {

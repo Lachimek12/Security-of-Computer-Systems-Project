@@ -11,8 +11,8 @@
     </UserControl.Resources>
     <Grid Background="White">
         <Button Content="Choose PDF file" Command="{Binding ChoosePdfFileCommand}" HorizontalAlignment="Center" Margin="0,75,0,0" VerticalAlignment="Top" Width="134"/>
-        <Label Content="{Binding Label_PdfFileName}" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Width="134" Height="45"/>
-        <Button Content="Sign PDF" Command="{Binding VerifyPdfFileCommand}" IsEnabled="{Binding Button_IsVeryfingEnabled}" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Width="134"/>
+        <Label Content="{Binding Label_PdfFileName}" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Width="192" Height="45"/>
+        <Button Content="Verify PDF" Command="{Binding VerifyPdfFileCommand}" IsEnabled="{Binding Button_IsVeryfingEnabled}" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" Width="134"/>
 
 
         <Label Content="Status: " HorizontalAlignment="Left" Margin="44,187,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.063,0.732"/>
