@@ -1,0 +1,467 @@
+\doxysection{Main\+App.\+View\+Models.\+Sign\+View\+Model Class Reference}
+\hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model}{}\label{class_main_app_1_1_view_models_1_1_sign_view_model}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+Inheritance diagram for Main\+App.\+View\+Models.\+Sign\+View\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_app_1_1_view_models_1_1_sign_view_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a11ce3ea7e91895d10b239130f933ea64}{Sign\+View\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_main_app_1_1_view_models_1_1_sign_view_model}{Sign\+View\+Model} class. Sets initial status, commands, tries to find private key, and starts drive watcher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a92aedb04c5dd77b26cb1c1324f6e93f5}{Text\+Box\+\_\+\+PIN}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em PIN input bound to UI. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a993fc32351761380e087d961424fc41e}{Label\+\_\+\+Pdf\+File\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em PDF filename displayed in UI. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_ab3b627746eb75adff78e27467e43476a}{Label\+\_\+\+Status}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}{Status} message shown to the user. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a44cbf943b99cf80fc7e7351a0fec9ef2}{Button\+\_\+\+Is\+Signing\+Enabled}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Controls if sign button is enabled. \end{DoxyCompactList}\item 
+ICommand \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_ab507ecce308d8ead54811bbf08aa579e}{Choose\+Pdf\+File\+Command}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Command to open PDF file dialog. \end{DoxyCompactList}\item 
+ICommand \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a405939c23065c6d04008a76effb73978}{Sign\+Pdf\+File\+Command}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Command to start signing the selected PDF. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Property\+Changed\+Event\+Handler \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_ae144ed378a64ce94ee68f3167156c916}{Property\+Changed}}
+\begin{DoxyCompactList}\small\item\em Event triggered when a property changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}{Status}} \{ \newline
+\mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a7937f12636f4707390058284b24944a5}{Waiting\+For\+Pin}}
+, \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a125e089b41b6ec2eb4a8b8ea85d2615b}{Pdf\+Valid}}
+, \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a99a1ec9f354793ef4c4e74fde7a6d111}{Waiting\+For\+Pdf}}
+, \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a4066ec42fddaf1ed850b2716cc125ad8}{Pdf\+And\+Pin\+Valid}}
+, \newline
+\mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6aa57709d71b452189f8c2e4b7734edf3a}{Pdf\+Signing}}
+, \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6adb15d2c4ba7b744f078b36ee2d79f480}{Pdf\+Signed}}
+, \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6ad6e1c6b1020072ee7d7777741569c0f0}{Private\+Key\+Not\+Found}}
+, \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a64694d7e39b110c7627a861b60bdcaf2}{Sign\+Unsuccesful}}
+ \}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}{Status} states for UI feedback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a8d8c1025a0d6217ff539bcd16d69a3d8}{Set\+Status\+Label}} (\mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}{Status}} status)
+\begin{DoxyCompactList}\small\item\em Sets the current status label based on the given status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a9669df255d4b12d61fbcf6969918e298}{Set\+Cutom\+Status\+Label}} (string status)
+\begin{DoxyCompactList}\small\item\em Updates the status label with a custom message. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_af3bc9bb076c3a73bcdabc1ee58a84123}{Is\+Valid\+PINInput}} (string pin\+Input)
+\begin{DoxyCompactList}\small\item\em Validates PIN input format (0 to 6 digits). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_ab57eec2ba4654f5545b5a9ce503a6112}{Is\+Valid\+PIN}} ()
+\begin{DoxyCompactList}\small\item\em Validates if the entered PIN is exactly 6 digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a216113bbbf9656899dc994b512377c88}{Sign\+Pdf\+File}} ()
+\begin{DoxyCompactList}\small\item\em Signs the PDF using the private key and PIN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_aa5cac3f6efd52bb3178b90136953e95e}{Choose\+Pdf\+File}} ()
+\begin{DoxyCompactList}\small\item\em Opens a file dialog to choose a PDF file. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a8fcfbed48a621d7a21f586c06e6b7ed5}{Extract\+Private\+Key}} ()
+\begin{DoxyCompactList}\small\item\em Searches removable drives for private key file "{}private.\+dat"{}. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a9fa2daef8e95c66c605e0e78d39c28ad}{Extract\+Certificate}} ()
+\begin{DoxyCompactList}\small\item\em Opens a file dialog to select a certificate (.cer) file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_af4cd0089636c20f3b0cf08855a56d6ca}{Ready\+To\+Sign}} ()
+\begin{DoxyCompactList}\small\item\em Updates UI status and button enable state based on inputs and key presence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a2c7cd2f8d9da9833d7102d5c6b47d3e1}{Start\+Drive\+Watcher}} ()
+\begin{DoxyCompactList}\small\item\em Starts monitoring drives for private key availability changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_ab9bb1c00aa5eca06c4107c93fda10ab3}{Update\+Drives}} ()
+\begin{DoxyCompactList}\small\item\em Updates private key path and UI when drives change. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a6388d3e4a3c3ee15693818b53469ea06}{Raise\+Property\+Changed}} (string property\+Name)
+\begin{DoxyCompactList}\small\item\em Raises Property\+Changed event for UI updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Sign\+Model \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a0a6169635aae45b42e1fca3de327ef8d}{\+\_\+sign\+Model}} = new()
+\item 
+readonly Dictionary$<$ \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}{Status}}, string $>$ \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_ab4948f5d3dec0127456ae81fc54d74d9}{\+\_\+status\+Messages}}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a360f24869cda4af3099ab757510c678e}{\+\_\+pdf\+File\+Path}}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a3773eb877ddf95f0a3b50b6bb47ed6d3}{\+\_\+private\+Key\+File\+Path}}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a04949ff7df29a309303614408702f2af}{\+\_\+is\+Signing\+Enabled}}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a5b16093a56393947daab2993bca2b787}{\+\_\+pin}}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a29939d5a6f492078b8f3d602d20e4cb3}{\+\_\+pdf\+File\+Name}}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a6bb6d726c3a26fd550a2b00b4f7a40fe}{\+\_\+status}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model to manage PDF signing with PIN and private key detection. ~\newline
+ Implements the INotify\+Property\+Changed interface. 
+
+\label{doc-enum-members}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!Status@{Status}}
+\index{Status@{Status}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6} 
+enum \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}{Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Status}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}{Status} states for UI feedback. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WaitingForPin@{WaitingForPin}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!WaitingForPin@{WaitingForPin}}}\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a7937f12636f4707390058284b24944a5}\label{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a7937f12636f4707390058284b24944a5} 
+Waiting\+For\+Pin&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PdfValid@{PdfValid}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!PdfValid@{PdfValid}}}\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a125e089b41b6ec2eb4a8b8ea85d2615b}\label{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a125e089b41b6ec2eb4a8b8ea85d2615b} 
+Pdf\+Valid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WaitingForPdf@{WaitingForPdf}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!WaitingForPdf@{WaitingForPdf}}}\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a99a1ec9f354793ef4c4e74fde7a6d111}\label{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a99a1ec9f354793ef4c4e74fde7a6d111} 
+Waiting\+For\+Pdf&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PdfAndPinValid@{PdfAndPinValid}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!PdfAndPinValid@{PdfAndPinValid}}}\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a4066ec42fddaf1ed850b2716cc125ad8}\label{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a4066ec42fddaf1ed850b2716cc125ad8} 
+Pdf\+And\+Pin\+Valid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PdfSigning@{PdfSigning}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!PdfSigning@{PdfSigning}}}\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6aa57709d71b452189f8c2e4b7734edf3a}\label{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6aa57709d71b452189f8c2e4b7734edf3a} 
+Pdf\+Signing&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PdfSigned@{PdfSigned}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!PdfSigned@{PdfSigned}}}\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6adb15d2c4ba7b744f078b36ee2d79f480}\label{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6adb15d2c4ba7b744f078b36ee2d79f480} 
+Pdf\+Signed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PrivateKeyNotFound@{PrivateKeyNotFound}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!PrivateKeyNotFound@{PrivateKeyNotFound}}}\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6ad6e1c6b1020072ee7d7777741569c0f0}\label{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6ad6e1c6b1020072ee7d7777741569c0f0} 
+Private\+Key\+Not\+Found&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SignUnsuccesful@{SignUnsuccesful}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!SignUnsuccesful@{SignUnsuccesful}}}\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a64694d7e39b110c7627a861b60bdcaf2}\label{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6a64694d7e39b110c7627a861b60bdcaf2} 
+Sign\+Unsuccesful&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a11ce3ea7e91895d10b239130f933ea64}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!SignViewModel@{SignViewModel}}
+\index{SignViewModel@{SignViewModel}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{SignViewModel()}{SignViewModel()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a11ce3ea7e91895d10b239130f933ea64} 
+Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Sign\+View\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \doxylink{class_main_app_1_1_view_models_1_1_sign_view_model}{Sign\+View\+Model} class. Sets initial status, commands, tries to find private key, and starts drive watcher. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_aa5cac3f6efd52bb3178b90136953e95e}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!ChoosePdfFile@{ChoosePdfFile}}
+\index{ChoosePdfFile@{ChoosePdfFile}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{ChoosePdfFile()}{ChoosePdfFile()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_aa5cac3f6efd52bb3178b90136953e95e} 
+void Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Choose\+Pdf\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Opens a file dialog to choose a PDF file. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a9fa2daef8e95c66c605e0e78d39c28ad}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!ExtractCertificate@{ExtractCertificate}}
+\index{ExtractCertificate@{ExtractCertificate}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{ExtractCertificate()}{ExtractCertificate()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a9fa2daef8e95c66c605e0e78d39c28ad} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Extract\+Certificate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Opens a file dialog to select a certificate (.cer) file. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{_sign_model_8cs_a5d3f395d3257bcd58335037355f0d7cc}{Path} to certificate file.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Data\+Exception} & If invalid file selected.\\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a8fcfbed48a621d7a21f586c06e6b7ed5}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!ExtractPrivateKey@{ExtractPrivateKey}}
+\index{ExtractPrivateKey@{ExtractPrivateKey}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{ExtractPrivateKey()}{ExtractPrivateKey()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a8fcfbed48a621d7a21f586c06e6b7ed5} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Extract\+Private\+Key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Searches removable drives for private key file "{}private.\+dat"{}. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{_sign_model_8cs_a5d3f395d3257bcd58335037355f0d7cc}{Path} to private key file.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & If private key not found.\\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_ab57eec2ba4654f5545b5a9ce503a6112}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!IsValidPIN@{IsValidPIN}}
+\index{IsValidPIN@{IsValidPIN}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{IsValidPIN()}{IsValidPIN()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_ab57eec2ba4654f5545b5a9ce503a6112} 
+bool Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Is\+Valid\+PIN (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Validates if the entered PIN is exactly 6 digits. 
+
+\begin{DoxyReturn}{Returns}
+True if PIN is valid; otherwise, false.
+\end{DoxyReturn}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_af3bc9bb076c3a73bcdabc1ee58a84123}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!IsValidPINInput@{IsValidPINInput}}
+\index{IsValidPINInput@{IsValidPINInput}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{IsValidPINInput()}{IsValidPINInput()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_af3bc9bb076c3a73bcdabc1ee58a84123} 
+bool Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Is\+Valid\+PINInput (\begin{DoxyParamCaption}\item[{string}]{pin\+Input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Validates PIN input format (0 to 6 digits). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+Input} & The PIN input string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if input format is valid; otherwise, false.
+\end{DoxyReturn}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a6388d3e4a3c3ee15693818b53469ea06}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!RaisePropertyChanged@{RaisePropertyChanged}}
+\index{RaisePropertyChanged@{RaisePropertyChanged}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{RaisePropertyChanged()}{RaisePropertyChanged()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a6388d3e4a3c3ee15693818b53469ea06} 
+void Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Raise\+Property\+Changed (\begin{DoxyParamCaption}\item[{string}]{property\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Raises Property\+Changed event for UI updates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property\+Name} & Changed property name.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_af4cd0089636c20f3b0cf08855a56d6ca}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!ReadyToSign@{ReadyToSign}}
+\index{ReadyToSign@{ReadyToSign}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{ReadyToSign()}{ReadyToSign()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_af4cd0089636c20f3b0cf08855a56d6ca} 
+void Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Ready\+To\+Sign (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Updates UI status and button enable state based on inputs and key presence. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a9669df255d4b12d61fbcf6969918e298}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!SetCutomStatusLabel@{SetCutomStatusLabel}}
+\index{SetCutomStatusLabel@{SetCutomStatusLabel}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{SetCutomStatusLabel()}{SetCutomStatusLabel()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a9669df255d4b12d61fbcf6969918e298} 
+void Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Set\+Cutom\+Status\+Label (\begin{DoxyParamCaption}\item[{string}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Updates the status label with a custom message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & The custom status message.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a8d8c1025a0d6217ff539bcd16d69a3d8}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!SetStatusLabel@{SetStatusLabel}}
+\index{SetStatusLabel@{SetStatusLabel}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{SetStatusLabel()}{SetStatusLabel()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a8d8c1025a0d6217ff539bcd16d69a3d8} 
+void Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Set\+Status\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}{Status}}}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Sets the current status label based on the given status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & The current status to display.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a216113bbbf9656899dc994b512377c88}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!SignPdfFile@{SignPdfFile}}
+\index{SignPdfFile@{SignPdfFile}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{SignPdfFile()}{SignPdfFile()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a216113bbbf9656899dc994b512377c88} 
+void Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Sign\+Pdf\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Signs the PDF using the private key and PIN. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a2c7cd2f8d9da9833d7102d5c6b47d3e1}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!StartDriveWatcher@{StartDriveWatcher}}
+\index{StartDriveWatcher@{StartDriveWatcher}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{StartDriveWatcher()}{StartDriveWatcher()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a2c7cd2f8d9da9833d7102d5c6b47d3e1} 
+void Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Start\+Drive\+Watcher (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Starts monitoring drives for private key availability changes. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_ab9bb1c00aa5eca06c4107c93fda10ab3}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!UpdateDrives@{UpdateDrives}}
+\index{UpdateDrives@{UpdateDrives}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{UpdateDrives()}{UpdateDrives()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_ab9bb1c00aa5eca06c4107c93fda10ab3} 
+void Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Update\+Drives (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Updates private key path and UI when drives change. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a04949ff7df29a309303614408702f2af}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!\_isSigningEnabled@{\_isSigningEnabled}}
+\index{\_isSigningEnabled@{\_isSigningEnabled}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{\_isSigningEnabled}{\_isSigningEnabled}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a04949ff7df29a309303614408702f2af} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+\_\+is\+Signing\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a29939d5a6f492078b8f3d602d20e4cb3}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!\_pdfFileName@{\_pdfFileName}}
+\index{\_pdfFileName@{\_pdfFileName}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{\_pdfFileName}{\_pdfFileName}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a29939d5a6f492078b8f3d602d20e4cb3} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+\_\+pdf\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a360f24869cda4af3099ab757510c678e}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!\_pdfFilePath@{\_pdfFilePath}}
+\index{\_pdfFilePath@{\_pdfFilePath}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{\_pdfFilePath}{\_pdfFilePath}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a360f24869cda4af3099ab757510c678e} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+\_\+pdf\+File\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a5b16093a56393947daab2993bca2b787}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!\_pin@{\_pin}}
+\index{\_pin@{\_pin}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{\_pin}{\_pin}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a5b16093a56393947daab2993bca2b787} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+\_\+pin\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a3773eb877ddf95f0a3b50b6bb47ed6d3}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!\_privateKeyFilePath@{\_privateKeyFilePath}}
+\index{\_privateKeyFilePath@{\_privateKeyFilePath}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{\_privateKeyFilePath}{\_privateKeyFilePath}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a3773eb877ddf95f0a3b50b6bb47ed6d3} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+\_\+private\+Key\+File\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a0a6169635aae45b42e1fca3de327ef8d}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!\_signModel@{\_signModel}}
+\index{\_signModel@{\_signModel}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{\_signModel}{\_signModel}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a0a6169635aae45b42e1fca3de327ef8d} 
+Sign\+Model Main\+App.\+View\+Models.\+Sign\+View\+Model.\+\_\+sign\+Model = new()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a6bb6d726c3a26fd550a2b00b4f7a40fe}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!\_status@{\_status}}
+\index{\_status@{\_status}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{\_status}{\_status}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a6bb6d726c3a26fd550a2b00b4f7a40fe} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+\_\+status\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_ab4948f5d3dec0127456ae81fc54d74d9}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!\_statusMessages@{\_statusMessages}}
+\index{\_statusMessages@{\_statusMessages}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{\_statusMessages}{\_statusMessages}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_ab4948f5d3dec0127456ae81fc54d74d9} 
+readonly Dictionary$<$\mbox{\hyperlink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}{Status}}, string$>$ Main\+App.\+View\+Models.\+Sign\+View\+Model.\+\_\+status\+Messages\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a44cbf943b99cf80fc7e7351a0fec9ef2}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!Button\_IsSigningEnabled@{Button\_IsSigningEnabled}}
+\index{Button\_IsSigningEnabled@{Button\_IsSigningEnabled}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{Button\_IsSigningEnabled}{Button\_IsSigningEnabled}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a44cbf943b99cf80fc7e7351a0fec9ef2} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Button\+\_\+\+Is\+Signing\+Enabled\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Controls if sign button is enabled. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_ab507ecce308d8ead54811bbf08aa579e}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!ChoosePdfFileCommand@{ChoosePdfFileCommand}}
+\index{ChoosePdfFileCommand@{ChoosePdfFileCommand}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{ChoosePdfFileCommand}{ChoosePdfFileCommand}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_ab507ecce308d8ead54811bbf08aa579e} 
+ICommand Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Choose\+Pdf\+File\+Command\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Command to open PDF file dialog. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a993fc32351761380e087d961424fc41e}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!Label\_PdfFileName@{Label\_PdfFileName}}
+\index{Label\_PdfFileName@{Label\_PdfFileName}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{Label\_PdfFileName}{Label\_PdfFileName}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a993fc32351761380e087d961424fc41e} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Label\+\_\+\+Pdf\+File\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+PDF filename displayed in UI. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_ab3b627746eb75adff78e27467e43476a}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!Label\_Status@{Label\_Status}}
+\index{Label\_Status@{Label\_Status}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{Label\_Status}{Label\_Status}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_ab3b627746eb75adff78e27467e43476a} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Label\+\_\+\+Status\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+\doxylink{class_main_app_1_1_view_models_1_1_sign_view_model_a914afb8b6319e9fbe0001beea11f08a6}{Status} message shown to the user. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a405939c23065c6d04008a76effb73978}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!SignPdfFileCommand@{SignPdfFileCommand}}
+\index{SignPdfFileCommand@{SignPdfFileCommand}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{SignPdfFileCommand}{SignPdfFileCommand}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a405939c23065c6d04008a76effb73978} 
+ICommand Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Sign\+Pdf\+File\+Command\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Command to start signing the selected PDF. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_a92aedb04c5dd77b26cb1c1324f6e93f5}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!TextBox\_PIN@{TextBox\_PIN}}
+\index{TextBox\_PIN@{TextBox\_PIN}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{TextBox\_PIN}{TextBox\_PIN}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_a92aedb04c5dd77b26cb1c1324f6e93f5} 
+string Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Text\+Box\+\_\+\+PIN\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+PIN input bound to UI. 
+
+
+
+\label{doc-event-members}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_sign_view_model_ae144ed378a64ce94ee68f3167156c916}\index{MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}!PropertyChanged@{PropertyChanged}}
+\index{PropertyChanged@{PropertyChanged}!MainApp.ViewModels.SignViewModel@{MainApp.ViewModels.SignViewModel}}
+\doxysubsubsection{\texorpdfstring{PropertyChanged}{PropertyChanged}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_sign_view_model_ae144ed378a64ce94ee68f3167156c916} 
+Property\+Changed\+Event\+Handler Main\+App.\+View\+Models.\+Sign\+View\+Model.\+Property\+Changed}
+
+
+
+Event triggered when a property changes. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Main\+App/\+View\+Models/\mbox{\hyperlink{_sign_view_model_8cs}{Sign\+View\+Model.\+cs}}\end{DoxyCompactItemize}

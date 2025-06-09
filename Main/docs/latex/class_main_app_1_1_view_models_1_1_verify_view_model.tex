@@ -1,0 +1,330 @@
+\doxysection{Main\+App.\+View\+Models.\+Verify\+View\+Model Class Reference}
+\hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model}{}\label{class_main_app_1_1_view_models_1_1_verify_view_model}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+
+
+View\+Model for verifying PDF files using digital signatures. Implements the INotify\+Property\+Changed interface.  
+
+
+Inheritance diagram for Main\+App.\+View\+Models.\+Verify\+View\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_app_1_1_view_models_1_1_verify_view_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a53b46d500dc38fdaf2fd573e6d36a856}{Verify\+View\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_main_app_1_1_view_models_1_1_verify_view_model}{Verify\+View\+Model} class. Sets up status messages and commands for choosing and verifying PDF files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_ad254e18712710d3e682895e7241f6b5f}{Label\+\_\+\+Pdf\+File\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the displayed PDF file name. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_aee0e7cb567c5653304877abbd72212ec}{Label\+\_\+\+Status}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the status label text. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a0cb480e113ed26d251c85d142f694855}{Button\+\_\+\+Is\+Veryfing\+Enabled}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a string representing whether the verify button is enabled. \end{DoxyCompactList}\item 
+ICommand \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_aa44ddebc91cc3e65a87042227f74cd1b}{Choose\+Pdf\+File\+Command}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Command to open a file dialog and choose a PDF file. \end{DoxyCompactList}\item 
+ICommand \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a9a1543cb7cf040f5419790230c453091}{Verify\+Pdf\+File\+Command}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Command to verify the selected PDF file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Property\+Changed\+Event\+Handler \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_ac7ab168a7630b6dda0b7fb318e2e2a0b}{Property\+Changed}}
+\begin{DoxyCompactList}\small\item\em Occurs when a property value changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277}{Status}} \{ \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277a99a1ec9f354793ef4c4e74fde7a6d111}{Waiting\+For\+Pdf}}
+, \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277a125e089b41b6ec2eb4a8b8ea85d2615b}{Pdf\+Valid}}
+, \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277ab65f052ad146153e91f28a64a2798ac4}{Veryfing\+Pdf}}
+, \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277a6ec02a47d8d07aba55d88e6b7a505c2f}{Pdf\+Verified}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines various verification statuses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_ae230e1b082ae351c1669a76f9757fb00}{Set\+Status\+Label}} (\mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277}{Status}} status)
+\begin{DoxyCompactList}\small\item\em Sets the current status label based on the given status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_acd4d14bc1938db6cfab927630c7fa475}{Set\+Cutom\+Status\+Label}} (string status)
+\begin{DoxyCompactList}\small\item\em Updates the status label with a custom message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_aa26dd1a5302d4fe47a20a33b324f4e14}{Raise\+Property\+Changed}} (string property\+Name)
+\begin{DoxyCompactList}\small\item\em Raises the Property\+Changed event for the given property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a7671d85d069e4a9aca7e2976df1dfd45}{Verify\+Pdf\+File}} ()
+\begin{DoxyCompactList}\small\item\em Verifies the currently selected PDF file using a certificate selected by the user. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a2fb33ddf732c35decbc963cb04c23be5}{Choose\+Pdf\+File}} ()
+\begin{DoxyCompactList}\small\item\em Opens a file dialog to allow the user to choose a PDF file to verify. Updates UI state accordingly. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a986178f2a712acd56bddd36b4d7c5d36}{Extract\+Certificate}} ()
+\begin{DoxyCompactList}\small\item\em Opens a file dialog to select a certificate file (.cer). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Sign\+Model \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a0c487f32308da213abd5cd62bddd80d8}{\+\_\+sign\+Model}} = new()
+\item 
+readonly Dictionary$<$ \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277}{Status}}, string $>$ \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a7d297fc0c25dcff130bf372e73963704}{\+\_\+status\+Messages}}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a8611736d822bdaca106712e10fa1f9a5}{\+\_\+pdf\+File\+Path}}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a0a7f200e2fc47059c9d2c54e976a6371}{\+\_\+is\+Veryfing\+Enabled}}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a14b4f4b1af2a97bb6cbcfa546897e106}{\+\_\+pdf\+File\+Name}}
+\item 
+string \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_aeb02e3c661cf7b2c1c7bc63c735d5a85}{\+\_\+status}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model for verifying PDF files using digital signatures. Implements the INotify\+Property\+Changed interface. 
+
+\label{doc-enum-members}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!Status@{Status}}
+\index{Status@{Status}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277} 
+enum \mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277}{Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Status}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Defines various verification statuses. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WaitingForPdf@{WaitingForPdf}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!WaitingForPdf@{WaitingForPdf}}}\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277a99a1ec9f354793ef4c4e74fde7a6d111}\label{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277a99a1ec9f354793ef4c4e74fde7a6d111} 
+Waiting\+For\+Pdf&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PdfValid@{PdfValid}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!PdfValid@{PdfValid}}}\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277a125e089b41b6ec2eb4a8b8ea85d2615b}\label{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277a125e089b41b6ec2eb4a8b8ea85d2615b} 
+Pdf\+Valid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VeryfingPdf@{VeryfingPdf}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!VeryfingPdf@{VeryfingPdf}}}\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277ab65f052ad146153e91f28a64a2798ac4}\label{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277ab65f052ad146153e91f28a64a2798ac4} 
+Veryfing\+Pdf&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PdfVerified@{PdfVerified}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!PdfVerified@{PdfVerified}}}\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277a6ec02a47d8d07aba55d88e6b7a505c2f}\label{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277a6ec02a47d8d07aba55d88e6b7a505c2f} 
+Pdf\+Verified&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a53b46d500dc38fdaf2fd573e6d36a856}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!VerifyViewModel@{VerifyViewModel}}
+\index{VerifyViewModel@{VerifyViewModel}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{VerifyViewModel()}{VerifyViewModel()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a53b46d500dc38fdaf2fd573e6d36a856} 
+Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Verify\+View\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \doxylink{class_main_app_1_1_view_models_1_1_verify_view_model}{Verify\+View\+Model} class. Sets up status messages and commands for choosing and verifying PDF files. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a2fb33ddf732c35decbc963cb04c23be5}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!ChoosePdfFile@{ChoosePdfFile}}
+\index{ChoosePdfFile@{ChoosePdfFile}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{ChoosePdfFile()}{ChoosePdfFile()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a2fb33ddf732c35decbc963cb04c23be5} 
+void Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Choose\+Pdf\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Opens a file dialog to allow the user to choose a PDF file to verify. Updates UI state accordingly. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a986178f2a712acd56bddd36b4d7c5d36}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!ExtractCertificate@{ExtractCertificate}}
+\index{ExtractCertificate@{ExtractCertificate}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{ExtractCertificate()}{ExtractCertificate()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a986178f2a712acd56bddd36b4d7c5d36} 
+string Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Extract\+Certificate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Opens a file dialog to select a certificate file (.cer). 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{_sign_model_8cs_a5d3f395d3257bcd58335037355f0d7cc}{Path} to the selected certificate file.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Data\+Exception} & Thrown if no valid certificate file is selected.\\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_aa26dd1a5302d4fe47a20a33b324f4e14}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!RaisePropertyChanged@{RaisePropertyChanged}}
+\index{RaisePropertyChanged@{RaisePropertyChanged}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{RaisePropertyChanged()}{RaisePropertyChanged()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_aa26dd1a5302d4fe47a20a33b324f4e14} 
+void Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Raise\+Property\+Changed (\begin{DoxyParamCaption}\item[{string}]{property\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Raises the Property\+Changed event for the given property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property\+Name} & Name of the property that changed.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_acd4d14bc1938db6cfab927630c7fa475}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!SetCutomStatusLabel@{SetCutomStatusLabel}}
+\index{SetCutomStatusLabel@{SetCutomStatusLabel}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{SetCutomStatusLabel()}{SetCutomStatusLabel()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_acd4d14bc1938db6cfab927630c7fa475} 
+void Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Set\+Cutom\+Status\+Label (\begin{DoxyParamCaption}\item[{string}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Updates the status label with a custom message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & The custom status message.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_ae230e1b082ae351c1669a76f9757fb00}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!SetStatusLabel@{SetStatusLabel}}
+\index{SetStatusLabel@{SetStatusLabel}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{SetStatusLabel()}{SetStatusLabel()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_ae230e1b082ae351c1669a76f9757fb00} 
+void Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Set\+Status\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277}{Status}}}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Sets the current status label based on the given status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & The current status to display.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a7671d85d069e4a9aca7e2976df1dfd45}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!VerifyPdfFile@{VerifyPdfFile}}
+\index{VerifyPdfFile@{VerifyPdfFile}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{VerifyPdfFile()}{VerifyPdfFile()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a7671d85d069e4a9aca7e2976df1dfd45} 
+void Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Verify\+Pdf\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Verifies the currently selected PDF file using a certificate selected by the user. 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a0a7f200e2fc47059c9d2c54e976a6371}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!\_isVeryfingEnabled@{\_isVeryfingEnabled}}
+\index{\_isVeryfingEnabled@{\_isVeryfingEnabled}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{\_isVeryfingEnabled}{\_isVeryfingEnabled}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a0a7f200e2fc47059c9d2c54e976a6371} 
+string Main\+App.\+View\+Models.\+Verify\+View\+Model.\+\_\+is\+Veryfing\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a14b4f4b1af2a97bb6cbcfa546897e106}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!\_pdfFileName@{\_pdfFileName}}
+\index{\_pdfFileName@{\_pdfFileName}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{\_pdfFileName}{\_pdfFileName}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a14b4f4b1af2a97bb6cbcfa546897e106} 
+string Main\+App.\+View\+Models.\+Verify\+View\+Model.\+\_\+pdf\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a8611736d822bdaca106712e10fa1f9a5}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!\_pdfFilePath@{\_pdfFilePath}}
+\index{\_pdfFilePath@{\_pdfFilePath}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{\_pdfFilePath}{\_pdfFilePath}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a8611736d822bdaca106712e10fa1f9a5} 
+string Main\+App.\+View\+Models.\+Verify\+View\+Model.\+\_\+pdf\+File\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a0c487f32308da213abd5cd62bddd80d8}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!\_signModel@{\_signModel}}
+\index{\_signModel@{\_signModel}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{\_signModel}{\_signModel}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a0c487f32308da213abd5cd62bddd80d8} 
+Sign\+Model Main\+App.\+View\+Models.\+Verify\+View\+Model.\+\_\+sign\+Model = new()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_aeb02e3c661cf7b2c1c7bc63c735d5a85}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!\_status@{\_status}}
+\index{\_status@{\_status}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{\_status}{\_status}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_aeb02e3c661cf7b2c1c7bc63c735d5a85} 
+string Main\+App.\+View\+Models.\+Verify\+View\+Model.\+\_\+status\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a7d297fc0c25dcff130bf372e73963704}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!\_statusMessages@{\_statusMessages}}
+\index{\_statusMessages@{\_statusMessages}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{\_statusMessages}{\_statusMessages}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a7d297fc0c25dcff130bf372e73963704} 
+readonly Dictionary$<$\mbox{\hyperlink{class_main_app_1_1_view_models_1_1_verify_view_model_a5150f1ec92ad3f307fe391b718f8a277}{Status}}, string$>$ Main\+App.\+View\+Models.\+Verify\+View\+Model.\+\_\+status\+Messages\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a0cb480e113ed26d251c85d142f694855}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!Button\_IsVeryfingEnabled@{Button\_IsVeryfingEnabled}}
+\index{Button\_IsVeryfingEnabled@{Button\_IsVeryfingEnabled}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{Button\_IsVeryfingEnabled}{Button\_IsVeryfingEnabled}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a0cb480e113ed26d251c85d142f694855} 
+string Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Button\+\_\+\+Is\+Veryfing\+Enabled\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a string representing whether the verify button is enabled. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_aa44ddebc91cc3e65a87042227f74cd1b}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!ChoosePdfFileCommand@{ChoosePdfFileCommand}}
+\index{ChoosePdfFileCommand@{ChoosePdfFileCommand}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{ChoosePdfFileCommand}{ChoosePdfFileCommand}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_aa44ddebc91cc3e65a87042227f74cd1b} 
+ICommand Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Choose\+Pdf\+File\+Command\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Command to open a file dialog and choose a PDF file. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_ad254e18712710d3e682895e7241f6b5f}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!Label\_PdfFileName@{Label\_PdfFileName}}
+\index{Label\_PdfFileName@{Label\_PdfFileName}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{Label\_PdfFileName}{Label\_PdfFileName}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_ad254e18712710d3e682895e7241f6b5f} 
+string Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Label\+\_\+\+Pdf\+File\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the displayed PDF file name. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_aee0e7cb567c5653304877abbd72212ec}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!Label\_Status@{Label\_Status}}
+\index{Label\_Status@{Label\_Status}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{Label\_Status}{Label\_Status}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_aee0e7cb567c5653304877abbd72212ec} 
+string Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Label\+\_\+\+Status\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the status label text. 
+
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_a9a1543cb7cf040f5419790230c453091}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!VerifyPdfFileCommand@{VerifyPdfFileCommand}}
+\index{VerifyPdfFileCommand@{VerifyPdfFileCommand}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{VerifyPdfFileCommand}{VerifyPdfFileCommand}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_a9a1543cb7cf040f5419790230c453091} 
+ICommand Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Verify\+Pdf\+File\+Command\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Command to verify the selected PDF file. 
+
+
+
+\label{doc-event-members}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_main_app_1_1_view_models_1_1_verify_view_model_ac7ab168a7630b6dda0b7fb318e2e2a0b}\index{MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}!PropertyChanged@{PropertyChanged}}
+\index{PropertyChanged@{PropertyChanged}!MainApp.ViewModels.VerifyViewModel@{MainApp.ViewModels.VerifyViewModel}}
+\doxysubsubsection{\texorpdfstring{PropertyChanged}{PropertyChanged}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_view_models_1_1_verify_view_model_ac7ab168a7630b6dda0b7fb318e2e2a0b} 
+Property\+Changed\+Event\+Handler Main\+App.\+View\+Models.\+Verify\+View\+Model.\+Property\+Changed}
+
+
+
+Occurs when a property value changes. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Main\+App/\+View\+Models/\mbox{\hyperlink{_verify_view_model_8cs}{Verify\+View\+Model.\+cs}}\end{DoxyCompactItemize}

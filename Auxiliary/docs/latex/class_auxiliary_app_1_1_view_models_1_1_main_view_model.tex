@@ -1,0 +1,283 @@
+\doxysection{Auxiliary\+App.\+View\+Models.\+Main\+View\+Model Class Reference}
+\hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model}{}\label{class_auxiliary_app_1_1_view_models_1_1_main_view_model}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+
+
+View\+Model for the main application logic, handling PIN validation and RSA key generation. Implements the INotify\+Property\+Changed interface.  
+
+
+Inheritance diagram for Auxiliary\+App.\+View\+Models.\+Main\+View\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_auxiliary_app_1_1_view_models_1_1_main_view_model}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a4adc38856776788e8246011da01b99df}{Main\+View\+Model}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_auxiliary_app_1_1_view_models_1_1_main_view_model}{Main\+View\+Model} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a89759f56a9a44311bd7dd470262b641a}{Text\+Box\+\_\+\+PIN}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the PIN entered by the user. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a81f0bd407069a2a48965429e5584ef8e}{Label\+\_\+\+Status}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the current status label message. \end{DoxyCompactList}\item 
+ICommand \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a44985c2e0071b5dee5120d36b1732e17}{Generate\+Keys\+Command}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the command that triggers RSA key generation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Property\+Changed\+Event\+Handler \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a67b5c509bd7ef77d8ec3157660277edc}{Property\+Changed}}
+\begin{DoxyCompactList}\small\item\em Event triggered when a property value changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799b}{Status}} \{ \newline
+\mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799baf30fa2eeef103c590b17e8f220ad8680}{Waiting\+For\+PIN}}
+, \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799ba57034f7bc45b4bac21e70d176fc8e42f}{Correct\+Pin}}
+, \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799ba24f0c9a2db3daa2800743c4791ce0365}{Incorrect\+Pin}}
+, \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799baf715245da48ff7efa82e83354e04b0e0}{Generating\+Keys}}
+, \newline
+\mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799bada995d09ef43c7088f7a50d53dd08ead}{Keys\+Generated}}
+ \}
+\begin{DoxyCompactList}\small\item\em Application status states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a947cc958f93c71a5711c6782fa09faca}{Set\+Status\+Label}} (\mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799b}{Status}} status)
+\begin{DoxyCompactList}\small\item\em Sets the current status label based on the given status. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_ab1fca1fa90a0d8928584bddc4b230298}{Is\+Valid\+PINInput}} (string pin\+Input)
+\begin{DoxyCompactList}\small\item\em Validates PIN input format (0 to 6 digits). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_abc8c5daa9acab5d420b9d4f96468fa2a}{Is\+Valid\+PIN}} ()
+\begin{DoxyCompactList}\small\item\em Validates if the entered PIN is exactly 6 digits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_aa71b894480276af0db076fdad25318e6}{Generate\+Keys}} ()
+\begin{DoxyCompactList}\small\item\em Triggers RSA key generation using the current PIN. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a53dfbaba0dd60b2a227a277aa27e39b4}{Raise\+Property\+Changed}} (string property\+Name)
+\begin{DoxyCompactList}\small\item\em Raises the Property\+Changed event for the given property. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator}{RSAKeys\+Generator}} \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_af68f3ecc4d2af6d7ed86737b36455c76}{\+\_\+rsa\+Keys\+Generator}} = new()
+\item 
+readonly Dictionary$<$ \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799b}{Status}}, string $>$ \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a5cb22a7e3868c70d4ae8a2ff9459d042}{\+\_\+status\+Messages}}
+\item 
+string \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a8888b929b1c66317c8f50b37315aed89}{\+\_\+pin}}
+\item 
+string \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_aabea035e2e529e6b2147d71cb01f0021}{\+\_\+status}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+View\+Model for the main application logic, handling PIN validation and RSA key generation. Implements the INotify\+Property\+Changed interface. 
+
+\label{doc-enum-members}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799b}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!Status@{Status}}
+\index{Status@{Status}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799b} 
+enum \mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799b}{Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Status}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Application status states. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WaitingForPIN@{WaitingForPIN}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!WaitingForPIN@{WaitingForPIN}}}\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799baf30fa2eeef103c590b17e8f220ad8680}\label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799baf30fa2eeef103c590b17e8f220ad8680} 
+Waiting\+For\+PIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CorrectPin@{CorrectPin}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!CorrectPin@{CorrectPin}}}\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799ba57034f7bc45b4bac21e70d176fc8e42f}\label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799ba57034f7bc45b4bac21e70d176fc8e42f} 
+Correct\+Pin&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IncorrectPin@{IncorrectPin}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!IncorrectPin@{IncorrectPin}}}\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799ba24f0c9a2db3daa2800743c4791ce0365}\label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799ba24f0c9a2db3daa2800743c4791ce0365} 
+Incorrect\+Pin&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GeneratingKeys@{GeneratingKeys}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!GeneratingKeys@{GeneratingKeys}}}\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799baf715245da48ff7efa82e83354e04b0e0}\label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799baf715245da48ff7efa82e83354e04b0e0} 
+Generating\+Keys&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KeysGenerated@{KeysGenerated}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!KeysGenerated@{KeysGenerated}}}\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799bada995d09ef43c7088f7a50d53dd08ead}\label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799bada995d09ef43c7088f7a50d53dd08ead} 
+Keys\+Generated&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a4adc38856776788e8246011da01b99df}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!MainViewModel@{MainViewModel}}
+\index{MainViewModel@{MainViewModel}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{MainViewModel()}{MainViewModel()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a4adc38856776788e8246011da01b99df} 
+Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Main\+View\+Model (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \doxylink{class_auxiliary_app_1_1_view_models_1_1_main_view_model}{Main\+View\+Model} class. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_aa71b894480276af0db076fdad25318e6}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!GenerateKeys@{GenerateKeys}}
+\index{GenerateKeys@{GenerateKeys}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{GenerateKeys()}{GenerateKeys()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_aa71b894480276af0db076fdad25318e6} 
+void Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Generate\+Keys (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Triggers RSA key generation using the current PIN. 
+
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_abc8c5daa9acab5d420b9d4f96468fa2a}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!IsValidPIN@{IsValidPIN}}
+\index{IsValidPIN@{IsValidPIN}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{IsValidPIN()}{IsValidPIN()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_abc8c5daa9acab5d420b9d4f96468fa2a} 
+bool Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Is\+Valid\+PIN (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Validates if the entered PIN is exactly 6 digits. 
+
+\begin{DoxyReturn}{Returns}
+True if PIN is valid; otherwise, false.
+\end{DoxyReturn}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_ab1fca1fa90a0d8928584bddc4b230298}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!IsValidPINInput@{IsValidPINInput}}
+\index{IsValidPINInput@{IsValidPINInput}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{IsValidPINInput()}{IsValidPINInput()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_ab1fca1fa90a0d8928584bddc4b230298} 
+bool Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Is\+Valid\+PINInput (\begin{DoxyParamCaption}\item[{string}]{pin\+Input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Validates PIN input format (0 to 6 digits). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin\+Input} & The PIN input string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if input format is valid; otherwise, false.
+\end{DoxyReturn}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a53dfbaba0dd60b2a227a277aa27e39b4}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!RaisePropertyChanged@{RaisePropertyChanged}}
+\index{RaisePropertyChanged@{RaisePropertyChanged}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{RaisePropertyChanged()}{RaisePropertyChanged()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a53dfbaba0dd60b2a227a277aa27e39b4} 
+void Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Raise\+Property\+Changed (\begin{DoxyParamCaption}\item[{string}]{property\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Raises the Property\+Changed event for the given property. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em property\+Name} & Name of the property that changed.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a947cc958f93c71a5711c6782fa09faca}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!SetStatusLabel@{SetStatusLabel}}
+\index{SetStatusLabel@{SetStatusLabel}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{SetStatusLabel()}{SetStatusLabel()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a947cc958f93c71a5711c6782fa09faca} 
+void Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Set\+Status\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799b}{Status}}}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Sets the current status label based on the given status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & The current status to display.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a8888b929b1c66317c8f50b37315aed89}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!\_pin@{\_pin}}
+\index{\_pin@{\_pin}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{\_pin}{\_pin}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a8888b929b1c66317c8f50b37315aed89} 
+string Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+\_\+pin\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_af68f3ecc4d2af6d7ed86737b36455c76}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!\_rsaKeysGenerator@{\_rsaKeysGenerator}}
+\index{\_rsaKeysGenerator@{\_rsaKeysGenerator}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{\_rsaKeysGenerator}{\_rsaKeysGenerator}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_af68f3ecc4d2af6d7ed86737b36455c76} 
+\mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator}{RSAKeys\+Generator}} Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+\_\+rsa\+Keys\+Generator = new()\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_aabea035e2e529e6b2147d71cb01f0021}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!\_status@{\_status}}
+\index{\_status@{\_status}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{\_status}{\_status}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_aabea035e2e529e6b2147d71cb01f0021} 
+string Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+\_\+status\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a5cb22a7e3868c70d4ae8a2ff9459d042}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!\_statusMessages@{\_statusMessages}}
+\index{\_statusMessages@{\_statusMessages}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{\_statusMessages}{\_statusMessages}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a5cb22a7e3868c70d4ae8a2ff9459d042} 
+readonly Dictionary$<$\mbox{\hyperlink{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a7157baa7debf9122a5c60c00b3bc799b}{Status}}, string$>$ Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+\_\+status\+Messages\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a44985c2e0071b5dee5120d36b1732e17}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!GenerateKeysCommand@{GenerateKeysCommand}}
+\index{GenerateKeysCommand@{GenerateKeysCommand}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{GenerateKeysCommand}{GenerateKeysCommand}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a44985c2e0071b5dee5120d36b1732e17} 
+ICommand Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Generate\+Keys\+Command\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the command that triggers RSA key generation. 
+
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a81f0bd407069a2a48965429e5584ef8e}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!Label\_Status@{Label\_Status}}
+\index{Label\_Status@{Label\_Status}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{Label\_Status}{Label\_Status}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a81f0bd407069a2a48965429e5584ef8e} 
+string Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Label\+\_\+\+Status\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the current status label message. 
+
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a89759f56a9a44311bd7dd470262b641a}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!TextBox\_PIN@{TextBox\_PIN}}
+\index{TextBox\_PIN@{TextBox\_PIN}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{TextBox\_PIN}{TextBox\_PIN}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a89759f56a9a44311bd7dd470262b641a} 
+string Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Text\+Box\+\_\+\+PIN\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the PIN entered by the user. 
+
+
+
+\label{doc-event-members}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a67b5c509bd7ef77d8ec3157660277edc}\index{AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}!PropertyChanged@{PropertyChanged}}
+\index{PropertyChanged@{PropertyChanged}!AuxiliaryApp.ViewModels.MainViewModel@{AuxiliaryApp.ViewModels.MainViewModel}}
+\doxysubsubsection{\texorpdfstring{PropertyChanged}{PropertyChanged}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_view_models_1_1_main_view_model_a67b5c509bd7ef77d8ec3157660277edc} 
+Property\+Changed\+Event\+Handler Auxiliary\+App.\+View\+Models.\+Main\+View\+Model.\+Property\+Changed}
+
+
+
+Event triggered when a property value changes. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Auxiliary\+App/\+View\+Models/\mbox{\hyperlink{_main_view_model_8cs}{Main\+View\+Model.\+cs}}\end{DoxyCompactItemize}

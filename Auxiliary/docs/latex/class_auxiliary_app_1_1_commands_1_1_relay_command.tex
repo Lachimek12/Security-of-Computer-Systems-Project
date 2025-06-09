@@ -1,0 +1,139 @@
+\doxysection{Auxiliary\+App.\+Commands.\+Relay\+Command Class Reference}
+\hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command}{}\label{class_auxiliary_app_1_1_commands_1_1_relay_command}\index{AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}}
+
+
+A command that relays its functionality to delegates. Implements the ICommand interface.  
+
+
+Inheritance diagram for Auxiliary\+App.\+Commands.\+Relay\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_auxiliary_app_1_1_commands_1_1_relay_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_auxiliary_app_1_1_commands_1_1_relay_command_ab93535206a172879a6f2d66c3f23119e}{Relay\+Command}} (Action execute, Func$<$ bool $>$ can\+Execute=null)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_auxiliary_app_1_1_commands_1_1_relay_command}{Relay\+Command} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_auxiliary_app_1_1_commands_1_1_relay_command_a707dcdb3aec25f906d4c2c6548ba210b}{Can\+Execute}} (object parameter)
+\begin{DoxyCompactList}\small\item\em Defines whether the command can execute in its current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_auxiliary_app_1_1_commands_1_1_relay_command_aab7e57657a8ca8903917bdbf0bae6018}{Execute}} (object parameter)
+\begin{DoxyCompactList}\small\item\em Executes the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler \mbox{\hyperlink{class_auxiliary_app_1_1_commands_1_1_relay_command_a083a4885c2ef3f335409e2e78adb6b96}{Can\+Execute\+Changed}}\hspace{0.3cm}{\ttfamily  \mbox{[}add, remove\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Occurs when changes occur that affect whether or not the command should execute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly Action \mbox{\hyperlink{class_auxiliary_app_1_1_commands_1_1_relay_command_a936b3a004a98744b0de1326191349d08}{\+\_\+execute}}
+\item 
+readonly Func$<$ bool $>$ \mbox{\hyperlink{class_auxiliary_app_1_1_commands_1_1_relay_command_a8bafc2fabfe0e2413b4d20dce2c73d62}{\+\_\+can\+Execute}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A command that relays its functionality to delegates. Implements the ICommand interface. 
+
+\label{doc-constructors}
+\Hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command_ab93535206a172879a6f2d66c3f23119e}\index{AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}!RelayCommand@{RelayCommand}}
+\index{RelayCommand@{RelayCommand}!AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}}
+\doxysubsubsection{\texorpdfstring{RelayCommand()}{RelayCommand()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_commands_1_1_relay_command_ab93535206a172879a6f2d66c3f23119e} 
+Auxiliary\+App.\+Commands.\+Relay\+Command.\+Relay\+Command (\begin{DoxyParamCaption}\item[{Action}]{execute}{, }\item[{Func$<$ bool $>$}]{can\+Execute}{ = {\ttfamily null}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \doxylink{class_auxiliary_app_1_1_commands_1_1_relay_command}{Relay\+Command} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em execute} & The action to execute when the command is triggered.\\
+\hline
+{\em can\+Execute} & Optional predicate to determine if the command can execute.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & Thrown if execute is null.\\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-func-members}
+\Hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command_a707dcdb3aec25f906d4c2c6548ba210b}\index{AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}!CanExecute@{CanExecute}}
+\index{CanExecute@{CanExecute}!AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}}
+\doxysubsubsection{\texorpdfstring{CanExecute()}{CanExecute()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_commands_1_1_relay_command_a707dcdb3aec25f906d4c2c6548ba210b} 
+bool Auxiliary\+App.\+Commands.\+Relay\+Command.\+Can\+Execute (\begin{DoxyParamCaption}\item[{object}]{parameter}{}\end{DoxyParamCaption})}
+
+
+
+Defines whether the command can execute in its current state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & Unused parameter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the command can execute; otherwise, false.
+\end{DoxyReturn}
+\Hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command_aab7e57657a8ca8903917bdbf0bae6018}\index{AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}!Execute@{Execute}}
+\index{Execute@{Execute}!AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_commands_1_1_relay_command_aab7e57657a8ca8903917bdbf0bae6018} 
+void Auxiliary\+App.\+Commands.\+Relay\+Command.\+Execute (\begin{DoxyParamCaption}\item[{object}]{parameter}{}\end{DoxyParamCaption})}
+
+
+
+Executes the command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & Unused parameter.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command_a8bafc2fabfe0e2413b4d20dce2c73d62}\index{AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}!\_canExecute@{\_canExecute}}
+\index{\_canExecute@{\_canExecute}!AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}}
+\doxysubsubsection{\texorpdfstring{\_canExecute}{\_canExecute}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_commands_1_1_relay_command_a8bafc2fabfe0e2413b4d20dce2c73d62} 
+readonly Func$<$bool$>$ Auxiliary\+App.\+Commands.\+Relay\+Command.\+\_\+can\+Execute\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command_a936b3a004a98744b0de1326191349d08}\index{AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}!\_execute@{\_execute}}
+\index{\_execute@{\_execute}!AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}}
+\doxysubsubsection{\texorpdfstring{\_execute}{\_execute}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_commands_1_1_relay_command_a936b3a004a98744b0de1326191349d08} 
+readonly Action Auxiliary\+App.\+Commands.\+Relay\+Command.\+\_\+execute\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-event-members}
+\Hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command_doc-event-members}
+\doxysubsection{Event Documentation}
+\Hypertarget{class_auxiliary_app_1_1_commands_1_1_relay_command_a083a4885c2ef3f335409e2e78adb6b96}\index{AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}!CanExecuteChanged@{CanExecuteChanged}}
+\index{CanExecuteChanged@{CanExecuteChanged}!AuxiliaryApp.Commands.RelayCommand@{AuxiliaryApp.Commands.RelayCommand}}
+\doxysubsubsection{\texorpdfstring{CanExecuteChanged}{CanExecuteChanged}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_commands_1_1_relay_command_a083a4885c2ef3f335409e2e78adb6b96} 
+Event\+Handler Auxiliary\+App.\+Commands.\+Relay\+Command.\+Can\+Execute\+Changed\hspace{0.3cm}{\ttfamily [add]}, {\ttfamily [remove]}}
+
+
+
+Occurs when changes occur that affect whether or not the command should execute. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Auxiliary\+App/\+Commands/\mbox{\hyperlink{_relay_command_8cs}{Relay\+Command.\+cs}}\end{DoxyCompactItemize}

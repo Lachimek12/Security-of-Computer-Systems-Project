@@ -1,0 +1,156 @@
+\doxysection{Auxiliary\+App.\+Models.\+RSAKeys\+Generator Class Reference}
+\hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator}{}\label{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator}\index{AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}}
+
+
+Handles RSA key generation and AES encryption of the private key.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a8a4a93b534a07e283c2d66dec2aadfec}{RSAKeys\+Generator}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator}{RSAKeys\+Generator} class. Sets file paths for storing public and private keys. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a079d7479897ac7cf41978a7542a96238}{Generate\+Keys}} (string input)
+\begin{DoxyCompactList}\small\item\em Generates RSA keys, creates a self-\/signed certificate, and encrypts the private key using AES with the hashed PIN. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a93fc7866517c8358b55b15716542608a}{Save\+Keys\+To\+File}} (byte\mbox{[}$\,$\mbox{]} private\+Key, byte\mbox{[}$\,$\mbox{]} public\+Key)
+\begin{DoxyCompactList}\small\item\em Saves the encrypted private key to a file. \end{DoxyCompactList}\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a98451839cf7f0d5b0861bb4ff7934f53}{Hash\+Input}} (string input)
+\begin{DoxyCompactList}\small\item\em Hashes the user input (e.\+g., PIN) using SHA-\/256. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly int \mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a6f15a0253416a0fae7bd69b4c253ebd7}{\+\_\+\+RSAkeys\+Length}} = 4096
+\item 
+readonly int \mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_aa1a0f9e29d649d4ad3b7bf4b5f3c75f6}{\+\_\+\+AESkey\+Length}} = 256
+\item 
+readonly byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_ac8c5ad5af979401830b6b0854276b18f}{\+\_\+iv}}
+\item 
+readonly string \mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_ad8ce0997669b3253fda77196bd14c692}{\+\_\+public\+Key\+File\+Path}}
+\item 
+readonly string \mbox{\hyperlink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a2de3f2d4413af5fa1a58a576333f231a}{\+\_\+private\+Key\+File\+Path}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles RSA key generation and AES encryption of the private key. 
+
+\label{doc-constructors}
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a8a4a93b534a07e283c2d66dec2aadfec}\index{AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}!RSAKeysGenerator@{RSAKeysGenerator}}
+\index{RSAKeysGenerator@{RSAKeysGenerator}!AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}}
+\doxysubsubsection{\texorpdfstring{RSAKeysGenerator()}{RSAKeysGenerator()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a8a4a93b534a07e283c2d66dec2aadfec} 
+Auxiliary\+App.\+Models.\+RSAKeys\+Generator.\+RSAKeys\+Generator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initializes a new instance of the \doxylink{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator}{RSAKeys\+Generator} class. Sets file paths for storing public and private keys. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a079d7479897ac7cf41978a7542a96238}\index{AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}!GenerateKeys@{GenerateKeys}}
+\index{GenerateKeys@{GenerateKeys}!AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}}
+\doxysubsubsection{\texorpdfstring{GenerateKeys()}{GenerateKeys()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a079d7479897ac7cf41978a7542a96238} 
+void Auxiliary\+App.\+Models.\+RSAKeys\+Generator.\+Generate\+Keys (\begin{DoxyParamCaption}\item[{string}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates RSA keys, creates a self-\/signed certificate, and encrypts the private key using AES with the hashed PIN. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & User input used to derive the AES encryption key (typically a PIN).\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a98451839cf7f0d5b0861bb4ff7934f53}\index{AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}!HashInput@{HashInput}}
+\index{HashInput@{HashInput}!AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}}
+\doxysubsubsection{\texorpdfstring{HashInput()}{HashInput()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a98451839cf7f0d5b0861bb4ff7934f53} 
+byte\mbox{[}$\,$\mbox{]} Auxiliary\+App.\+Models.\+RSAKeys\+Generator.\+Hash\+Input (\begin{DoxyParamCaption}\item[{string}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Hashes the user input (e.\+g., PIN) using SHA-\/256. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The input string to hash.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SHA-\/256 hash of the input as a byte array.
+\end{DoxyReturn}
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a93fc7866517c8358b55b15716542608a}\index{AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}!SaveKeysToFile@{SaveKeysToFile}}
+\index{SaveKeysToFile@{SaveKeysToFile}!AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}}
+\doxysubsubsection{\texorpdfstring{SaveKeysToFile()}{SaveKeysToFile()}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a93fc7866517c8358b55b15716542608a} 
+void Auxiliary\+App.\+Models.\+RSAKeys\+Generator.\+Save\+Keys\+To\+File (\begin{DoxyParamCaption}\item[{byte\mbox{[}$\,$\mbox{]}}]{private\+Key}{, }\item[{byte\mbox{[}$\,$\mbox{]}}]{public\+Key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Saves the encrypted private key to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em private\+Key} & The encrypted private key bytes.\\
+\hline
+{\em public\+Key} & The RSA public key modulus (currently unused).\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_aa1a0f9e29d649d4ad3b7bf4b5f3c75f6}\index{AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}!\_AESkeyLength@{\_AESkeyLength}}
+\index{\_AESkeyLength@{\_AESkeyLength}!AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}}
+\doxysubsubsection{\texorpdfstring{\_AESkeyLength}{\_AESkeyLength}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_aa1a0f9e29d649d4ad3b7bf4b5f3c75f6} 
+readonly int Auxiliary\+App.\+Models.\+RSAKeys\+Generator.\+\_\+\+AESkey\+Length = 256\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_ac8c5ad5af979401830b6b0854276b18f}\index{AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}!\_iv@{\_iv}}
+\index{\_iv@{\_iv}!AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}}
+\doxysubsubsection{\texorpdfstring{\_iv}{\_iv}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_ac8c5ad5af979401830b6b0854276b18f} 
+readonly byte \mbox{[}$\,$\mbox{]} Auxiliary\+App.\+Models.\+RSAKeys\+Generator.\+\_\+iv\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{byte}[]}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 0x01,\ 0x23,\ 0x45,\ 0x67,\ 0x89,\ 0xAB,\ 0xCD,\ 0xEF,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 0xFE,\ 0xDC,\ 0xBA,\ 0x98,\ 0x76,\ 0x54,\ 0x32,\ 0x10}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a2de3f2d4413af5fa1a58a576333f231a}\index{AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}!\_privateKeyFilePath@{\_privateKeyFilePath}}
+\index{\_privateKeyFilePath@{\_privateKeyFilePath}!AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}}
+\doxysubsubsection{\texorpdfstring{\_privateKeyFilePath}{\_privateKeyFilePath}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a2de3f2d4413af5fa1a58a576333f231a} 
+readonly string Auxiliary\+App.\+Models.\+RSAKeys\+Generator.\+\_\+private\+Key\+File\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_ad8ce0997669b3253fda77196bd14c692}\index{AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}!\_publicKeyFilePath@{\_publicKeyFilePath}}
+\index{\_publicKeyFilePath@{\_publicKeyFilePath}!AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}}
+\doxysubsubsection{\texorpdfstring{\_publicKeyFilePath}{\_publicKeyFilePath}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_ad8ce0997669b3253fda77196bd14c692} 
+readonly string Auxiliary\+App.\+Models.\+RSAKeys\+Generator.\+\_\+public\+Key\+File\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a6f15a0253416a0fae7bd69b4c253ebd7}\index{AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}!\_RSAkeysLength@{\_RSAkeysLength}}
+\index{\_RSAkeysLength@{\_RSAkeysLength}!AuxiliaryApp.Models.RSAKeysGenerator@{AuxiliaryApp.Models.RSAKeysGenerator}}
+\doxysubsubsection{\texorpdfstring{\_RSAkeysLength}{\_RSAkeysLength}}
+{\footnotesize\ttfamily \label{class_auxiliary_app_1_1_models_1_1_r_s_a_keys_generator_a6f15a0253416a0fae7bd69b4c253ebd7} 
+readonly int Auxiliary\+App.\+Models.\+RSAKeys\+Generator.\+\_\+\+RSAkeys\+Length = 4096\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Auxiliary\+App/\+Models/\mbox{\hyperlink{_r_s_a_keys_generator_8cs}{RSAKeys\+Generator.\+cs}}\end{DoxyCompactItemize}
