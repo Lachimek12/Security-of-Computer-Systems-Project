@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['verifypdffilecommand_0',['VerifyPdfFileCommand',['../class_main_app_1_1_view_models_1_1_verify_view_model.html#a9a1543cb7cf040f5419790230c453091',1,'MainApp::ViewModels::VerifyViewModel']]]
+  ['signpdffilecommand_0',['SignPdfFileCommand',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a405939c23065c6d04008a76effb73978',1,'MainApp::ViewModels::SignViewModel']]]
 ];

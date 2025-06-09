@@ -54,7 +54,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_8_n_e_t_core_app_00_version_0av8_80_8_assembly_attributes_8cs.html",
-"class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#a8ec4c37e82d9f4e867e9655f4eac3a78"
+"class_main_app_1_1_views_1_1_verify_view.html#a7c49c5ddf9d3cef0c6addd35a60a0d95"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

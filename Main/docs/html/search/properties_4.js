@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['textbox_5fpin_0',['TextBox_PIN',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a92aedb04c5dd77b26cb1c1324f6e93f5',1,'MainApp::ViewModels::SignViewModel']]]
+  ['resourcemanager_0',['ResourceManager',['../class_main_app_1_1_properties_1_1_resources.html#a0f4cc13e515ca132890747a61776da48',1,'MainApp::Properties::Resources']]]
 ];

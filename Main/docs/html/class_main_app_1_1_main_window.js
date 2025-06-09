@@ -7,5 +7,7 @@ var class_main_app_1_1_main_window =
     [ "InitializeComponent", "class_main_app_1_1_main_window.html#a5d12af5828ffd11fb540b6063b1a8c0d", null ],
     [ "Sign_Clicked", "class_main_app_1_1_main_window.html#aa70e0b00ec2c84f8733899276ee8a890", null ],
     [ "Verify_Clicked", "class_main_app_1_1_main_window.html#a455d1150101909c192486e3161332595", null ],
-    [ "_contentLoaded", "class_main_app_1_1_main_window.html#a1385feb092418e69ef1ad5bb2bcd3bfd", null ]
+    [ "_contentLoaded", "class_main_app_1_1_main_window.html#a1385feb092418e69ef1ad5bb2bcd3bfd", null ],
+    [ "SignNavbarButton", "class_main_app_1_1_main_window.html#afb85fc7bc995030a71899cedaa41798e", null ],
+    [ "VerifyNavbarButton", "class_main_app_1_1_main_window.html#a2e6eba6c19a7dc720bb9ec9b985c1da9", null ]
 ];

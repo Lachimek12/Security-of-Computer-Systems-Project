@@ -1,8 +1,14 @@
 var searchData=
 [
-  ['raisepropertychanged_0',['RaisePropertyChanged',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a6388d3e4a3c3ee15693818b53469ea06',1,'MainApp.ViewModels.SignViewModel.RaisePropertyChanged()'],['../class_main_app_1_1_view_models_1_1_verify_view_model.html#aa26dd1a5302d4fe47a20a33b324f4e14',1,'MainApp.ViewModels.VerifyViewModel.RaisePropertyChanged()']]],
-  ['readytosign_1',['ReadyToSign',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#af4cd0089636c20f3b0cf08855a56d6ca',1,'MainApp::ViewModels::SignViewModel']]],
-  ['relaycommand_2',['RelayCommand',['../class_main_app_1_1_commands_1_1_relay_command.html',1,'MainApp.Commands.RelayCommand'],['../class_main_app_1_1_commands_1_1_relay_command.html#a59138985fc9393f8677b4e10287c1002',1,'MainApp.Commands.RelayCommand.RelayCommand()']]],
-  ['relaycommand_2ecs_3',['RelayCommand.cs',['../_relay_command_8cs.html',1,'']]],
-  ['resources_2edesigner_2ecs_4',['Resources.Designer.cs',['../_resources_8_designer_8cs.html',1,'']]]
+  ['main_0',['Main',['../class_main_app_1_1_app.html#a9f5b680a49ac02ddff53d534494dc14d',1,'MainApp.App.Main()'],['../class_main_app_1_1_app.html#a9f5b680a49ac02ddff53d534494dc14d',1,'MainApp.App.Main()']]],
+  ['mainapp_1',['MainApp',['../namespace_main_app.html',1,'']]],
+  ['mainapp_3a_3acommands_2',['Commands',['../namespace_main_app_1_1_commands.html',1,'MainApp']]],
+  ['mainapp_3a_3amodels_3',['Models',['../namespace_main_app_1_1_models.html',1,'MainApp']]],
+  ['mainapp_3a_3aproperties_4',['Properties',['../namespace_main_app_1_1_properties.html',1,'MainApp']]],
+  ['mainapp_3a_3aviewmodels_5',['ViewModels',['../namespace_main_app_1_1_view_models.html',1,'MainApp']]],
+  ['mainapp_3a_3aviews_6',['Views',['../namespace_main_app_1_1_views.html',1,'MainApp']]],
+  ['mainwindow_7',['MainWindow',['../class_main_app_1_1_main_window.html',1,'MainApp.MainWindow'],['../class_main_app_1_1_main_window.html#a7c0814764a029b623930b4488f351685',1,'MainApp.MainWindow.MainWindow()']]],
+  ['mainwindow_2eg_2ecs_8',['MainWindow.g.cs',['../_main_window_8g_8cs.html',1,'']]],
+  ['mainwindow_2eg_2ei_2ecs_9',['MainWindow.g.i.cs',['../_main_window_8g_8i_8cs.html',1,'']]],
+  ['mainwindow_2examl_2ecs_10',['MainWindow.xaml.cs',['../_main_window_8xaml_8cs.html',1,'']]]
 ];

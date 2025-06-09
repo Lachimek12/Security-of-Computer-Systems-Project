@@ -1,20 +1,11 @@
 var searchData=
 [
-  ['setcutomstatuslabel_0',['SetCutomStatusLabel',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a9669df255d4b12d61fbcf6969918e298',1,'MainApp.ViewModels.SignViewModel.SetCutomStatusLabel()'],['../class_main_app_1_1_view_models_1_1_verify_view_model.html#acd4d14bc1938db6cfab927630c7fa475',1,'MainApp.ViewModels.VerifyViewModel.SetCutomStatusLabel()']]],
-  ['setpropertyvalue_1',['SetPropertyValue',['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#ade0f04c0f7b18dd5b170e071d5534d38',1,'XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, object value, System.Globalization.CultureInfo culture)'],['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#ade0f04c0f7b18dd5b170e071d5534d38',1,'XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo propertyInfo, object target, object value, System.Globalization.CultureInfo culture)']]],
-  ['setstatuslabel_2',['SetStatusLabel',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a8d8c1025a0d6217ff539bcd16d69a3d8',1,'MainApp.ViewModels.SignViewModel.SetStatusLabel()'],['../class_main_app_1_1_view_models_1_1_verify_view_model.html#ae230e1b082ae351c1669a76f9757fb00',1,'MainApp.ViewModels.VerifyViewModel.SetStatusLabel()']]],
-  ['settings_2edesigner_2ecs_3',['Settings.Designer.cs',['../_settings_8_designer_8cs.html',1,'']]],
-  ['sign_5fclicked_4',['Sign_Clicked',['../class_main_app_1_1_main_window.html#aa70e0b00ec2c84f8733899276ee8a890',1,'MainApp::MainWindow']]],
-  ['signmodel_2ecs_5',['SignModel.cs',['../_sign_model_8cs.html',1,'']]],
-  ['signpdffile_6',['SignPdfFile',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a216113bbbf9656899dc994b512377c88',1,'MainApp::ViewModels::SignViewModel']]],
-  ['signpdffilecommand_7',['SignPdfFileCommand',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a405939c23065c6d04008a76effb73978',1,'MainApp::ViewModels::SignViewModel']]],
-  ['signunsuccesful_8',['SignUnsuccesful',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a914afb8b6319e9fbe0001beea11f08a6a64694d7e39b110c7627a861b60bdcaf2',1,'MainApp::ViewModels::SignViewModel']]],
-  ['signview_9',['SignView',['../class_main_app_1_1_views_1_1_sign_view.html',1,'MainApp.Views.SignView'],['../class_main_app_1_1_views_1_1_sign_view.html#a9b8e2cb2ba2fb4b3e609bfe52af2d845',1,'MainApp.Views.SignView.SignView()']]],
-  ['signview_2eg_2ecs_10',['SignView.g.cs',['../_sign_view_8g_8cs.html',1,'']]],
-  ['signview_2eg_2ei_2ecs_11',['SignView.g.i.cs',['../_sign_view_8g_8i_8cs.html',1,'']]],
-  ['signview_2examl_2ecs_12',['SignView.xaml.cs',['../_sign_view_8xaml_8cs.html',1,'']]],
-  ['signviewmodel_13',['SignViewModel',['../class_main_app_1_1_view_models_1_1_sign_view_model.html',1,'MainApp.ViewModels.SignViewModel'],['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a11ce3ea7e91895d10b239130f933ea64',1,'MainApp.ViewModels.SignViewModel.SignViewModel()']]],
-  ['signviewmodel_2ecs_14',['SignViewModel.cs',['../_sign_view_model_8cs.html',1,'']]],
-  ['startdrivewatcher_15',['StartDriveWatcher',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a2c7cd2f8d9da9833d7102d5c6b47d3e1',1,'MainApp::ViewModels::SignViewModel']]],
-  ['status_16',['Status',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a914afb8b6319e9fbe0001beea11f08a6',1,'MainApp.ViewModels.SignViewModel.Status'],['../class_main_app_1_1_view_models_1_1_verify_view_model.html#a5150f1ec92ad3f307fe391b718f8a277',1,'MainApp.ViewModels.VerifyViewModel.Status']]]
+  ['path_0',['Path',['../_sign_model_8cs.html#a5d3f395d3257bcd58335037355f0d7cc',1,'SignModel.cs']]],
+  ['pdfandpinvalid_1',['PdfAndPinValid',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a914afb8b6319e9fbe0001beea11f08a6a4066ec42fddaf1ed850b2716cc125ad8',1,'MainApp::ViewModels::SignViewModel']]],
+  ['pdfsigned_2',['PdfSigned',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a914afb8b6319e9fbe0001beea11f08a6adb15d2c4ba7b744f078b36ee2d79f480',1,'MainApp::ViewModels::SignViewModel']]],
+  ['pdfsigning_3',['PdfSigning',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a914afb8b6319e9fbe0001beea11f08a6aa57709d71b452189f8c2e4b7734edf3a',1,'MainApp::ViewModels::SignViewModel']]],
+  ['pdfvalid_4',['PdfValid',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a914afb8b6319e9fbe0001beea11f08a6a125e089b41b6ec2eb4a8b8ea85d2615b',1,'MainApp.ViewModels.SignViewModel.PdfValid'],['../class_main_app_1_1_view_models_1_1_verify_view_model.html#a5150f1ec92ad3f307fe391b718f8a277a125e089b41b6ec2eb4a8b8ea85d2615b',1,'MainApp.ViewModels.VerifyViewModel.PdfValid']]],
+  ['pdfverified_5',['PdfVerified',['../class_main_app_1_1_view_models_1_1_verify_view_model.html#a5150f1ec92ad3f307fe391b718f8a277a6ec02a47d8d07aba55d88e6b7a505c2f',1,'MainApp::ViewModels::VerifyViewModel']]],
+  ['privatekeynotfound_6',['PrivateKeyNotFound',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a914afb8b6319e9fbe0001beea11f08a6ad6e1c6b1020072ee7d7777741569c0f0',1,'MainApp::ViewModels::SignViewModel']]],
+  ['propertychanged_7',['PropertyChanged',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#ae144ed378a64ce94ee68f3167156c916',1,'MainApp.ViewModels.SignViewModel.PropertyChanged'],['../class_main_app_1_1_view_models_1_1_verify_view_model.html#ac7ab168a7630b6dda0b7fb318e2e2a0b',1,'MainApp.ViewModels.VerifyViewModel.PropertyChanged']]]
 ];

@@ -1,0 +1,139 @@
+\doxysection{Main\+App.\+Models.\+Sign\+Model Class Reference}
+\hypertarget{class_main_app_1_1_models_1_1_sign_model}{}\label{class_main_app_1_1_models_1_1_sign_model}\index{MainApp.Models.SignModel@{MainApp.Models.SignModel}}
+
+
+Provides methods to sign PDF files and verify digital signatures.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_app_1_1_models_1_1_sign_model_afbcd03b12fef5a39517488379c5857ff}{Sign\+Pdf}} (string public\+Key, string private\+Key, string pdf\+File\+Path, string input)
+\begin{DoxyCompactList}\small\item\em Signs a PDF file using the provided public and private keys and a passphrase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_main_app_1_1_models_1_1_sign_model_a7e38d92277aa056ba513fe4f03ce01a2}{Verify\+Keys}} (string public\+Key, string signed\+Pdf)
+\begin{DoxyCompactList}\small\item\em Verifies that the signatures in a signed PDF are valid and match the provided public key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_main_app_1_1_models_1_1_sign_model_a9511cadd11f170aedd4de3d88d639b79}{Hash\+Input}} (string input)
+\begin{DoxyCompactList}\small\item\em Computes the SHA-\/256 hash of the given input string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly int \mbox{\hyperlink{class_main_app_1_1_models_1_1_sign_model_a3d6686a584312c0f93c10dd9968d026d}{\+\_\+\+AESkey\+Length}} = 256
+\begin{DoxyCompactList}\small\item\em Length of AES encryption key in bits. \end{DoxyCompactList}\item 
+readonly byte\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_main_app_1_1_models_1_1_sign_model_a94d8a6c19a0611ea5c85ddf92b02f0d6}{\+\_\+iv}}
+\begin{DoxyCompactList}\small\item\em Initialization vector for AES encryption/decryption. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides methods to sign PDF files and verify digital signatures. 
+
+\label{doc-func-members}
+\Hypertarget{class_main_app_1_1_models_1_1_sign_model_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_app_1_1_models_1_1_sign_model_a9511cadd11f170aedd4de3d88d639b79}\index{MainApp.Models.SignModel@{MainApp.Models.SignModel}!HashInput@{HashInput}}
+\index{HashInput@{HashInput}!MainApp.Models.SignModel@{MainApp.Models.SignModel}}
+\doxysubsubsection{\texorpdfstring{HashInput()}{HashInput()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_models_1_1_sign_model_a9511cadd11f170aedd4de3d88d639b79} 
+byte\mbox{[}$\,$\mbox{]} Main\+App.\+Models.\+Sign\+Model.\+Hash\+Input (\begin{DoxyParamCaption}\item[{string}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Computes the SHA-\/256 hash of the given input string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Input string to hash.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Hashed bytes.
+\end{DoxyReturn}
+\Hypertarget{class_main_app_1_1_models_1_1_sign_model_afbcd03b12fef5a39517488379c5857ff}\index{MainApp.Models.SignModel@{MainApp.Models.SignModel}!SignPdf@{SignPdf}}
+\index{SignPdf@{SignPdf}!MainApp.Models.SignModel@{MainApp.Models.SignModel}}
+\doxysubsubsection{\texorpdfstring{SignPdf()}{SignPdf()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_models_1_1_sign_model_afbcd03b12fef5a39517488379c5857ff} 
+void Main\+App.\+Models.\+Sign\+Model.\+Sign\+Pdf (\begin{DoxyParamCaption}\item[{string}]{public\+Key}{, }\item[{string}]{private\+Key}{, }\item[{string}]{pdf\+File\+Path}{, }\item[{string}]{input}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Signs a PDF file using the provided public and private keys and a passphrase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em public\+Key} & \doxylink{_sign_model_8cs_a5d3f395d3257bcd58335037355f0d7cc}{Path} to the public certificate file (.cer).\\
+\hline
+{\em private\+Key} & \doxylink{_sign_model_8cs_a5d3f395d3257bcd58335037355f0d7cc}{Path} to the encrypted private key file.\\
+\hline
+{\em pdf\+File\+Path} & \doxylink{_sign_model_8cs_a5d3f395d3257bcd58335037355f0d7cc}{Path} to the PDF file to sign.\\
+\hline
+{\em input} & Passphrase used to decrypt the private key.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & Thrown when the private key decryption fails.\\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_main_app_1_1_models_1_1_sign_model_a7e38d92277aa056ba513fe4f03ce01a2}\index{MainApp.Models.SignModel@{MainApp.Models.SignModel}!VerifyKeys@{VerifyKeys}}
+\index{VerifyKeys@{VerifyKeys}!MainApp.Models.SignModel@{MainApp.Models.SignModel}}
+\doxysubsubsection{\texorpdfstring{VerifyKeys()}{VerifyKeys()}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_models_1_1_sign_model_a7e38d92277aa056ba513fe4f03ce01a2} 
+void Main\+App.\+Models.\+Sign\+Model.\+Verify\+Keys (\begin{DoxyParamCaption}\item[{string}]{public\+Key}{, }\item[{string}]{signed\+Pdf}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifies that the signatures in a signed PDF are valid and match the provided public key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em public\+Key} & \doxylink{_sign_model_8cs_a5d3f395d3257bcd58335037355f0d7cc}{Path} to the public certificate file (.cer).\\
+\hline
+{\em signed\+Pdf} & \doxylink{_sign_model_8cs_a5d3f395d3257bcd58335037355f0d7cc}{Path} to the signed PDF file.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Invalid\+Operation\+Exception} & Thrown when signature verification fails or signatures are invalid.\\
+\hline
+\end{DoxyExceptions}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_main_app_1_1_models_1_1_sign_model_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_main_app_1_1_models_1_1_sign_model_a3d6686a584312c0f93c10dd9968d026d}\index{MainApp.Models.SignModel@{MainApp.Models.SignModel}!\_AESkeyLength@{\_AESkeyLength}}
+\index{\_AESkeyLength@{\_AESkeyLength}!MainApp.Models.SignModel@{MainApp.Models.SignModel}}
+\doxysubsubsection{\texorpdfstring{\_AESkeyLength}{\_AESkeyLength}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_models_1_1_sign_model_a3d6686a584312c0f93c10dd9968d026d} 
+readonly int Main\+App.\+Models.\+Sign\+Model.\+\_\+\+AESkey\+Length = 256\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Length of AES encryption key in bits. 
+
+\Hypertarget{class_main_app_1_1_models_1_1_sign_model_a94d8a6c19a0611ea5c85ddf92b02f0d6}\index{MainApp.Models.SignModel@{MainApp.Models.SignModel}!\_iv@{\_iv}}
+\index{\_iv@{\_iv}!MainApp.Models.SignModel@{MainApp.Models.SignModel}}
+\doxysubsubsection{\texorpdfstring{\_iv}{\_iv}}
+{\footnotesize\ttfamily \label{class_main_app_1_1_models_1_1_sign_model_a94d8a6c19a0611ea5c85ddf92b02f0d6} 
+readonly byte \mbox{[}$\,$\mbox{]} Main\+App.\+Models.\+Sign\+Model.\+\_\+iv\hspace{0.3cm}{\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{byte}[]}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 0x01,\ 0x23,\ 0x45,\ 0x67,\ 0x89,\ 0xAB,\ 0xCD,\ 0xEF,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ 0xFE,\ 0xDC,\ 0xBA,\ 0x98,\ 0x76,\ 0x54,\ 0x32,\ 0x10}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Initialization vector for AES encryption/decryption. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Main\+App/\+Models/\mbox{\hyperlink{_sign_model_8cs}{Sign\+Model.\+cs}}\end{DoxyCompactItemize}

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['raisepropertychanged_0',['RaisePropertyChanged',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#a6388d3e4a3c3ee15693818b53469ea06',1,'MainApp.ViewModels.SignViewModel.RaisePropertyChanged()'],['../class_main_app_1_1_view_models_1_1_verify_view_model.html#aa26dd1a5302d4fe47a20a33b324f4e14',1,'MainApp.ViewModels.VerifyViewModel.RaisePropertyChanged()']]],
-  ['readytosign_1',['ReadyToSign',['../class_main_app_1_1_view_models_1_1_sign_view_model.html#af4cd0089636c20f3b0cf08855a56d6ca',1,'MainApp::ViewModels::SignViewModel']]],
-  ['relaycommand_2',['RelayCommand',['../class_main_app_1_1_commands_1_1_relay_command.html#a59138985fc9393f8677b4e10287c1002',1,'MainApp::Commands::RelayCommand']]]
+  ['main_0',['Main',['../class_main_app_1_1_app.html#a9f5b680a49ac02ddff53d534494dc14d',1,'MainApp.App.Main()'],['../class_main_app_1_1_app.html#a9f5b680a49ac02ddff53d534494dc14d',1,'MainApp.App.Main()']]],
+  ['mainwindow_1',['MainWindow',['../class_main_app_1_1_main_window.html#a7c0814764a029b623930b4488f351685',1,'MainApp::MainWindow']]]
 ];
