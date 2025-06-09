@@ -17,17 +17,25 @@ using AuxiliaryApp.ViewModels;
 namespace AuxiliaryApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Main window handling the primary view.
+    /// Implements the <see cref="Window"/> interface.
     /// </summary>
-    /// 
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Initializes the window and loads the main view.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             this.Main_Clicked(null, null);
         }
 
+        /// <summary>
+        /// Sets window properties and loads MainViewModel.
+        /// </summary>
+        /// <param name="sender">Event sender.</param>
+        /// <param name="e">Event args.</param>
         private void Main_Clicked(object sender, RoutedEventArgs e)
         {
             this.Width = 400;

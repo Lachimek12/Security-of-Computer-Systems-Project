@@ -17,12 +17,18 @@ using MainApp.ViewModels;
 namespace MainApp.Views
 {
     /// <summary>
-    /// Interaction logic for RedView.xaml
+    /// Interaction logic for the main user interface view.
+    /// Binds to <see cref="SignViewModel"/>.
+    /// Implements the <see cref="UserControl"/> interface.
     /// </summary>
     public partial class SignView : UserControl
     {
 
         #region Constructors
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SignView"/> class.
+        /// Sets the DataContext to a new <see cref="SignViewModel"/> instance.
+        /// </summary>
         public SignView()
         {
             InitializeComponent();
@@ -35,6 +41,9 @@ namespace MainApp.Views
 
         #region Members
 
+        /// <summary>
+        /// Reference to the ViewModel backing this view.
+        /// </summary>
         private SignViewModel _viewModel;
 
         #endregion

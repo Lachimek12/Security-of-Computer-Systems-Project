@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace AuxiliaryApp.Models
 {
+    /// <summary>
+    /// Handles RSA key generation and AES encryption of the private key.
+    /// </summary>
     class RSAKeysGenerator
     {
         private readonly int _RSAkeysLength = 4096;
@@ -22,6 +25,10 @@ namespace AuxiliaryApp.Models
         private readonly string _publicKeyFilePath;
         private readonly string _privateKeyFilePath;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RSAKeysGenerator"/> class.
+        /// Sets file paths for storing public and private keys.
+        /// </summary>
         public RSAKeysGenerator()
         {
             string workingDirectory = Environment.CurrentDirectory;
@@ -31,6 +38,11 @@ namespace AuxiliaryApp.Models
             _publicKeyFilePath = keysDirectory + "/public.cer";
             _privateKeyFilePath = keysDirectory + "/private.dat";
         }
+
+        /// <summary>
+        /// Generates RSA keys, creates a self-signed certificate, and encrypts the private key using AES with the hashed PIN.
+        /// </summary>
+        /// <param name="input">User input used to derive the AES encryption key (typically a PIN).</param>
         public void GenerateKeys(string input)
         {
             RSA rsa = RSA.Create(_RSAkeysLength);
@@ -63,13 +75,22 @@ namespace AuxiliaryApp.Models
             SaveKeysToFile(encryptedPrivateKey, parameters.Modulus);
         }
 
-
+        /// <summary>
+        /// Saves the encrypted private key to a file.
+        /// </summary>
+        /// <param name="privateKey">The encrypted private key bytes.</param>
+        /// <param name="publicKey">The RSA public key modulus (currently unused).</param>
         private void SaveKeysToFile(byte[] privateKey, byte[] publicKey)
         {
             File.WriteAllBytes(_privateKeyFilePath, privateKey);
             //File.WriteAllBytes(_publicKeyFilePath, publicKey);
         }
 
+        /// <summary>
+        /// Hashes the user input (e.g., PIN) using SHA-256.
+        /// </summary>
+        /// <param name="input">The input string to hash.</param>
+        /// <returns>SHA-256 hash of the input as a byte array.</returns>
         private byte[] HashInput(string input)
         {
             using (SHA256 sha256 = SHA256.Create())

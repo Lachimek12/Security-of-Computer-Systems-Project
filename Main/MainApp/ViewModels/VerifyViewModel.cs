@@ -29,9 +29,16 @@ using MainApp.Models;
 
 namespace MainApp.ViewModels
 {
+    /// <summary>
+    /// ViewModel for verifying PDF files using digital signatures.
+    /// Implements the <see cref="INotifyPropertyChanged"/> interface.
+    /// </summary>
     public class VerifyViewModel : INotifyPropertyChanged
     {
         #region  Type Definitions
+        /// <summary>
+        /// Defines various verification statuses.
+        /// </summary>
         enum Status
         {
             WaitingForPdf,
@@ -43,6 +50,10 @@ namespace MainApp.ViewModels
         #endregion
 
         #region Consturctors
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VerifyViewModel"/> class.
+        /// Sets up status messages and commands for choosing and verifying PDF files.
+        /// </summary>
         public VerifyViewModel()
         {
             _statusMessages = new Dictionary<Status, string>()
@@ -79,6 +90,9 @@ namespace MainApp.ViewModels
 
         #region Properties
 
+        /// <summary>
+        /// Gets or sets the displayed PDF file name.
+        /// </summary>
         public string Label_PdfFileName
         {
             get { return this._pdfFileName; }
@@ -88,6 +102,10 @@ namespace MainApp.ViewModels
                 RaisePropertyChanged(nameof(Label_PdfFileName));
             }
         }
+
+        /// <summary>
+        /// Gets or sets the status label text.
+        /// </summary>
         public string Label_Status
         {
             get { return this._status; }
@@ -98,6 +116,9 @@ namespace MainApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets a string representing whether the verify button is enabled.
+        /// </summary>
         public string Button_IsVeryfingEnabled
         {
             get { return this._isVeryfingEnabled; }
@@ -108,8 +129,14 @@ namespace MainApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Command to open a file dialog and choose a PDF file.
+        /// </summary>
         public ICommand ChoosePdfFileCommand { get; }
 
+        /// <summary>
+        /// Command to verify the selected PDF file.
+        /// </summary>
         public ICommand VerifyPdfFileCommand { get; }
 
 
@@ -118,17 +145,29 @@ namespace MainApp.ViewModels
 
         #region INotifyPropertyChanged Members
 
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
 
         #region Util Methods
+
+        /// <summary>
+        /// Sets the current status label based on the given status.
+        /// </summary>
+        /// <param name="status">The current status to display.</param>
         private void SetStatusLabel(Status status)
         {
             Label_Status = _statusMessages[status];
         }
 
+        /// <summary>
+        /// Updates the status label with a custom message.
+        /// </summary>
+        /// <param name="status">The custom status message.</param>
         private void SetCutomStatusLabel(string status)
         {
             Label_Status = status;
@@ -138,6 +177,10 @@ namespace MainApp.ViewModels
 
         #region Service Methods
 
+        /// <summary>
+        /// Raises the PropertyChanged event for the given property.
+        /// </summary>
+        /// <param name="propertyName">Name of the property that changed.</param>
         private void RaisePropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
@@ -147,6 +190,9 @@ namespace MainApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Verifies the currently selected PDF file using a certificate selected by the user.
+        /// </summary>
         private void VerifyPdfFile()
         {
             SetStatusLabel(Status.VeryfingPdf);
@@ -163,6 +209,10 @@ namespace MainApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Opens a file dialog to allow the user to choose a PDF file to verify.
+        /// Updates UI state accordingly.
+        /// </summary>
         private void ChoosePdfFile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -186,6 +236,11 @@ namespace MainApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Opens a file dialog to select a certificate file (.cer).
+        /// </summary>
+        /// <returns>Path to the selected certificate file.</returns>
+        /// <exception cref="InvalidDataException">Thrown if no valid certificate file is selected.</exception>
         private string ExtractCertificate()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

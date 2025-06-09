@@ -17,12 +17,18 @@ using MainApp.ViewModels;
 namespace MainApp.Views
 {
     /// <summary>
-    /// Interaction logic for RedView.xaml
+    /// Interaction logic for the main user interface view.
+    /// Binds to <see cref="VerifyViewModel"/>.
+    /// Implements the <see cref="UserControl"/> interface.
     /// </summary>
     public partial class VerifyView : UserControl
     {
 
         #region Constructors
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VerifyView"/> class.
+        /// Sets the DataContext to a new <see cref="VerifyViewModel"/> instance.
+        /// </summary>
         public VerifyView()
         {
             InitializeComponent();
@@ -35,6 +41,9 @@ namespace MainApp.Views
 
         #region Members
 
+        /// <summary>
+        /// Reference to the ViewModel backing this view.
+        /// </summary>
         private VerifyViewModel _viewModel;
 
         #endregion

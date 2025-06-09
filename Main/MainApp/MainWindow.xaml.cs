@@ -17,17 +17,25 @@ using MainApp.ViewModels;
 namespace MainApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Main window handling navigation between Sign and Verify views.
+    /// Implements the <see cref="Window"/> interface.
     /// </summary>
-    /// 
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Initializes the window and loads the Sign view.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
             this.Sign_Clicked(null, null);
         }
 
+        /// <summary>
+        /// Switches to the Sign view.
+        /// </summary>
+        /// <param name="sender">Event sender.</param>
+        /// <param name="e">Event args.</param>
         private void Sign_Clicked(object sender, RoutedEventArgs e)
         {
             this.Width = 400;
@@ -38,6 +46,12 @@ namespace MainApp
             
             DataContext = new SignViewModel();
         }
+
+        /// <summary>
+        /// Switches to the Verify view.
+        /// </summary>
+        /// <param name="sender">Event sender.</param>
+        /// <param name="e">Event args.</param>
         private void Verify_Clicked(object sender, RoutedEventArgs e)
         {
             this.Width = 400;

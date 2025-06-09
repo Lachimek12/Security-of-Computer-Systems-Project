@@ -29,9 +29,15 @@ using AuxiliaryApp.Models;
 
 namespace AuxiliaryApp.ViewModels
 {
+    /// <summary>
+    /// ViewModel for the main application logic, handling PIN validation and RSA key generation.
+    /// Implements the <see cref="INotifyPropertyChanged"/> interface.
+    /// </summary>
     public class MainViewModel : INotifyPropertyChanged
     {
-
+        /// <summary>
+        /// Application status states.
+        /// </summary>
         #region  Type Definitions
         enum Status
         {
@@ -46,6 +52,9 @@ namespace AuxiliaryApp.ViewModels
 
         #region Consturctors
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainViewModel"/> class.
+        /// </summary>
         public MainViewModel()
         {
             _statusMessages = new Dictionary<Status, string>()
@@ -89,7 +98,9 @@ namespace AuxiliaryApp.ViewModels
 
 
         #region Properties
-
+        /// <summary>
+        /// Gets or sets the PIN entered by the user.
+        /// </summary>
         public string TextBox_PIN
         {
             get { return this._pin; }
@@ -112,6 +123,9 @@ namespace AuxiliaryApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the current status label message.
+        /// </summary>
         public string Label_Status
         {
             get { return this._status; }
@@ -122,6 +136,9 @@ namespace AuxiliaryApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets the command that triggers RSA key generation.
+        /// </summary>
         public ICommand GenerateKeysCommand { get; }
 
         #endregion
@@ -129,6 +146,9 @@ namespace AuxiliaryApp.ViewModels
 
         #region INotifyPropertyChanged Members
 
+        /// <summary>
+        /// Event triggered when a property value changes.
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
@@ -136,11 +156,20 @@ namespace AuxiliaryApp.ViewModels
 
         #region Util Methods
 
+        /// <summary>
+        /// Sets the current status label based on the given status.
+        /// </summary>
+        /// <param name="status">The current status to display.</param>
         private void SetStatusLabel(Status status)
         {
             Label_Status = _statusMessages[status];
         }
 
+        /// <summary>
+        /// Validates PIN input format (0 to 6 digits).
+        /// </summary>
+        /// <param name="pinInput">The PIN input string.</param>
+        /// <returns>True if input format is valid; otherwise, false.</returns>
         private bool IsValidPINInput(string pinInput)
         {
             string pattern = @"^\d{0,6}$";
@@ -148,6 +177,10 @@ namespace AuxiliaryApp.ViewModels
             return Regex.IsMatch(pinInput, pattern);
         }
 
+        /// <summary>
+        /// Validates if the entered PIN is exactly 6 digits.
+        /// </summary>
+        /// <returns>True if PIN is valid; otherwise, false.</returns>
         private bool IsValidPIN()
         {
             if(_pin == null) return false;
@@ -157,6 +190,9 @@ namespace AuxiliaryApp.ViewModels
             return Regex.IsMatch(_pin, pattern);
         }
 
+        /// <summary>
+        /// Triggers RSA key generation using the current PIN.
+        /// </summary>
         private void GenerateKeys()
         {
             _rsaKeysGenerator.GenerateKeys(_pin);
@@ -166,6 +202,10 @@ namespace AuxiliaryApp.ViewModels
 
         #region Service Methods
 
+        /// <summary>
+        /// Raises the PropertyChanged event for the given property.
+        /// </summary>
+        /// <param name="propertyName">Name of the property that changed.</param>
         private void RaisePropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;

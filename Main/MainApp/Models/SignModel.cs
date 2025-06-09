@@ -44,17 +44,36 @@ using Org.BouncyCastle.X509;
 using System.Windows.Documents;
 using Path = System.IO.Path;
 
+
 namespace MainApp.Models
 {
+    /// <summary>
+    /// Provides methods to sign PDF files and verify digital signatures.
+    /// </summary>
     internal class SignModel
     {
+        /// <summary>
+        /// Length of AES encryption key in bits.
+        /// </summary>
         private readonly int _AESkeyLength = 256;
+
+        /// <summary>
+        /// Initialization vector for AES encryption/decryption.
+        /// </summary>
         private readonly byte[] _iv = new byte[]
         {
             0x01, 0x23, 0x45, 0x67, 0x89, 0xAB, 0xCD, 0xEF,
             0xFE, 0xDC, 0xBA, 0x98, 0x76, 0x54, 0x32, 0x10
         };
 
+        /// <summary>
+        /// Signs a PDF file using the provided public and private keys and a passphrase.
+        /// </summary>
+        /// <param name="publicKey">Path to the public certificate file (.cer).</param>
+        /// <param name="privateKey">Path to the encrypted private key file.</param>
+        /// <param name="pdfFilePath">Path to the PDF file to sign.</param>
+        /// <param name="input">Passphrase used to decrypt the private key.</param>
+        /// <exception cref="Exception">Thrown when the private key decryption fails.</exception>
         public void SignPdf(string publicKey, string privateKey, string pdfFilePath, string input)
         {            
             var cert = new X509Certificate2(publicKey);
@@ -114,6 +133,11 @@ namespace MainApp.Models
                 CryptoStandard.CMS);
         }
 
+        /// <summary>
+        /// Computes the SHA-256 hash of the given input string.
+        /// </summary>
+        /// <param name="input">Input string to hash.</param>
+        /// <returns>Hashed bytes.</returns>
         private byte[] HashInput(string input)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -124,6 +148,12 @@ namespace MainApp.Models
             }
         }
 
+        /// <summary>
+        /// Verifies that the signatures in a signed PDF are valid and match the provided public key.
+        /// </summary>
+        /// <param name="publicKey">Path to the public certificate file (.cer).</param>
+        /// <param name="signedPdf">Path to the signed PDF file.</param>
+        /// <exception cref="InvalidOperationException">Thrown when signature verification fails or signatures are invalid.</exception>
         public void VerifyKeys(string publicKey, string signedPdf)
         {
             using var publicKeyStream = new FileStream(publicKey, FileMode.Open);
